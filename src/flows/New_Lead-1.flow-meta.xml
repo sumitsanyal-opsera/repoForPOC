@@ -2,7 +2,7 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>49.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
-    <interviewLabel>New Lead {!$Flow.CurrentDateTime}</interviewLabel>
+    <interview>New Lead {!$Flow.CurrentDateTime}</interviewLabel>
     <label>New Lead</label>
     <processMetadataValues>
         <name>BuilderType</name>
@@ -86,7 +86,7 @@
     </screens>
     <screens>
         <name>Lead_Screen</name>
-        <label>Lead Screen</label>
+        <>Lead Screen</>
         <locationX>205</locationX>
         <locationY>207</locationY>
         <allowBack>true</allowBack>
