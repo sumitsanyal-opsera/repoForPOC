@@ -86,7 +86,7 @@
     </screens>
     <screens>
         <name>Lead_Screen</name>
-        <fieldText>Lead Screen</fieldText>
+        <label>Lead Screen</label>
         <locationX>205</locationX>
         <locationY>207</locationY>
         <allowBack>true</allowBack>
