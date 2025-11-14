@@ -64,5 +64,5 @@
             <targetReference>Test_Screen</targetReference>
         </connector>
     </start>
-    <status>Obsolete</status>
+    <status>Active</status>
 </Flow>
