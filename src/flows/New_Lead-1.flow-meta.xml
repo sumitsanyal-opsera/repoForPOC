@@ -3,7 +3,7 @@
     <apiVersion>49.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <interviewLabel>New Lead {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>New Lead</label>
+    <label>New Lead-1</label>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
