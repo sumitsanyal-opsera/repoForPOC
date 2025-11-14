@@ -28,7 +28,7 @@
         <name>Create_Lead</name>
         <label>Create Lead</label>
         <locationX>420</locationX>
-        <locationY>246</locationY>
+        <locationY>280</locationY>
         <connector>
             <targetReference>Component_Screen</targetReference>
         </connector>
