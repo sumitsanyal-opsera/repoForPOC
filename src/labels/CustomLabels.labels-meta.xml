@@ -13,6 +13,7 @@
         <protected>true</protected>
         <shortDescription>TestLabel2</shortDescription>
         <value>False</value>
+        
     <labels>
         <fullName>TestLabel3</fullName>
         <language>en_US</language>
