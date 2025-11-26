@@ -8,7 +8,8 @@ public with sharing class ChangePasswordController {
     
     public PageReference changePassword() {
         System.debug('changePassword() called');
-          return Site.changePassword(newPassword, verifyNewPassword, oldpassword);    
+          return Site.changePassword(newPassword, verifyNewPassword, oldpassword);   
+        //Adding comment for testing
     }     
     
    	public ChangePasswordController() {}
