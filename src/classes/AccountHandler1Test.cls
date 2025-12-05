@@ -16,7 +16,7 @@ public class AccountHandler1Test {
             WHERE Name LIKE 'Acme Inc n%'
         ];
         
-        System.assertEquals(n - 1, accs.size());
+        System.assertEquals(n - 1, accs.size())
 
         for (Integer i = 1; i < n; i++) {
             System.assertEquals('Acme Inc n' + i, accs[i - 1].Name);
