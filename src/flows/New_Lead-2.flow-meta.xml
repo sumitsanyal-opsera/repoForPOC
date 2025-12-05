@@ -2,13 +2,19 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>49.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
-<!-- Test comment-->
-<interviewLabel>New Lead {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>New Lead</label>
-      <processMetadataValues>
+    <environments>Default</environments>
+    <interviewLabel>New Lead-2 {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>New Lead-2</label>
+    <processMetadataValues>
         <name>BuilderType</name>
         <value>
             <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -22,7 +28,7 @@
         <name>Create_Lead</name>
         <label>Create Lead</label>
         <locationX>420</locationX>
-        <locationY>246</locationY>
+        <locationY>280</locationY>
         <connector>
             <targetReference>Component_Screen</targetReference>
         </connector>
@@ -71,6 +77,7 @@
                     <booleanValue>true</booleanValue>
                 </value>
             </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
             <styleProperties>
@@ -101,6 +108,7 @@
             <dataType>String</dataType>
             <fieldText>Last Name</fieldText>
             <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <styleProperties>
                 <verticalAlignment>
@@ -116,6 +124,7 @@
             <dataType>String</dataType>
             <fieldText>Company Name</fieldText>
             <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <styleProperties>
                 <verticalAlignment>
