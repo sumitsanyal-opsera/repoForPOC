@@ -1,7 +1,6 @@
 public with sharing class ProjectTaskUtility {
     
     // Method to mark all tasks as completed
-     //new Test comment 
     public static void completeAllTasks() {
         List<Project_Task__c> tasks = [
             SELECT Id, Status__c FROM Project_Task__c WHERE Status__c != 'Completed'

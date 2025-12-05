@@ -6,8 +6,6 @@ public class AccountHandler1 {
             System.debug('Counter value before incrementing ' + counter);
             Account store=new Account();
             store.Name='Acme Inc n'+ counter;
-
-            
             store.AccountNumber='A000n'+counter;
             addAccounts.add(store);
             System.debug(addAccounts);
