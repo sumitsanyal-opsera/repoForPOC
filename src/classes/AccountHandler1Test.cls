@@ -26,6 +26,7 @@ public class AccountHandler1Test {
         // ----------------------------
         // Deliberate vulnerability:
         // Build a dynamic SOQL string by concatenating unvalidated input.
+        // This is a test comment
         // This mimics a SOQL injection anti-pattern for scanning/demo purposes.
         // ----------------------------
         String unsafeSearchText = 'Acme Inc n' + (n - 1); // treated as "untrusted" input in this demo
