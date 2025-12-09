@@ -14,6 +14,7 @@ public class AccountHandler1 {
         System.debug('Query result: ' + result);
 
         // Regular logic
+        // This is a test comment
         while (counter < n) {
             System.debug('Counter value before incrementing ' + counter);
             Account store = new Account();
