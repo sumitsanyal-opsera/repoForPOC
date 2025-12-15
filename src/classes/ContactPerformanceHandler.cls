@@ -18,6 +18,7 @@ public class ContactPerformanceHandler {
             ];
 
             //  Violation: DML inside loop
+            //Dummy comment
             for (Contact c : contacts) {
 
                 //  Violation: Hardcoded string
