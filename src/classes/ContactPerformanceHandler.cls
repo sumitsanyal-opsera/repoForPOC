@@ -1,36 +1,57 @@
 public class ContactPerformanceHandler {
 
-    //  Violation: Public static method doing SOQL + DML + business logic together
-    //  Violation: No input validation
-    //  Violation: No exception handling
+    //  Performance + Best Practice Violations:
+    // - SOQL inside loop
+    // - DML inside loop
+    // - Nested loops
+    // - describe calls inside loop
+    // - Repeated String concatenation
+    // - No bulkification
+    // - No limit handling
+    // - No exception handling
+    // - Excessive debug logging
+
     public static void processContacts(Integer recordCount) {
 
-        //  Violation: Magic number
-        Integer counter = 0;
+        Integer counter = 0; //  Magic number
+        String auditLog = ''; //  Inefficient string concatenation
 
-        //  Violation: SOQL inside loop (performance anti-pattern)
         while (counter < recordCount) {
 
-            //  Violation: Query without selective filters
+            //  Violation: Describe call inside loop (very expensive)
+            Map<String, Schema.SObjectType> globalMap = Schema.getGlobalDescribe();
+
+            //  Violation: Unselective SOQL inside loop
             List<Contact> contacts = [
-                SELECT Id, FirstName, LastName, Email
+                SELECT Id, FirstName, LastName, Email, Description
                 FROM Contact
             ];
 
-            //  Violation: DML inside loop
             for (Contact c : contacts) {
 
-                //  Violation: Hardcoded string
-                c.Description = 'Updated by handler';
+                //  Violation: String concatenation in loop
+                auditLog += c.LastName;
 
-                //  Violation: Update inside nested loop
+                //  Violation: Hardcoded value
+                c.Description = 'Updated_' + counter;
+
+                //  Violation: DML inside inner loop
                 update c;
+
+                //  Violation: Debug inside nested loop
+                System.debug('Updated contact: ' + c.Id);
             }
 
-            //  Violation: Excessive debug logging
-            System.debug('Processed iteration: ' + counter);
+            //  Violation: Additional SOQL inside loop (redundant query)
+            Integer totalContacts = [SELECT COUNT() FROM Contact];
+
+            //  Violation: Debug log spam
+            System.debug('Iteration ' + counter + ' processed. Total Contacts: ' + totalContacts);
 
             counter++;
         }
+
+        //  Violation: Unused variable (auditLog never used)
+        System.debug('Audit log size: ' + auditLog.length());
     }
 }
