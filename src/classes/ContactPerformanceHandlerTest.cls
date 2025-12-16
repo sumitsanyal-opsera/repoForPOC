@@ -24,7 +24,6 @@ public class ContactPerformanceHandlerTest {
         ContactPerformanceHandler.processContacts(2);
         ContactPerformanceHandler.processContacts(1);
 
-        System.Test.stopTest();
 
         //  Violation: SOQL query without filters
         List<Contact> updatedContacts = [
