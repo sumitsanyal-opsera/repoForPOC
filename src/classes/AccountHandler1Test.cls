@@ -5,7 +5,6 @@ public class AccountHandler1Test {
     static void testInsertAccount_Violations() {
 
         //  FIX: Fully qualified Test framework
-        System.Test.startTest();
 
         //  Violation: Magic number
         AccountHandler1.insertAccount(5);
