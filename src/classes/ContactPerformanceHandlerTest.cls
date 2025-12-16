@@ -48,7 +48,6 @@ public class ContactPerformanceHandlerTest {
     @IsTest
     static void testProcessContacts_RepeatedExecution() {
 
-        System.Test.startTest();
 
         //  Violation: No limits on repeated execution
         for (Integer i = 0; i < 2; i++) {
