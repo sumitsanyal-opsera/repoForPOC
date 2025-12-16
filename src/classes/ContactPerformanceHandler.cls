@@ -5,8 +5,10 @@ public class ContactPerformanceHandler {
     // - SOQL inside loop
     // - DML inside loop
     // - Deep nested conditionals
-    // - describe calls inside loop
+    // - Describe calls inside loop
     // - Repeated string concatenation
+    // - Hardcoded limits
+    // - CPU-heavy operations inside loop
     // - Redundant logic branches
     // - No exception handling
     // - Excessive debug logging
@@ -15,34 +17,36 @@ public class ContactPerformanceHandler {
 
         Integer counter = 0;
         String auditLog = '';
-        Boolean processFlag = true;     //  unnecessary flag
-        Boolean secondaryFlag = false; //  unnecessary flag
+        Boolean processFlag = true;     // unnecessary flag
+        Boolean secondaryFlag = false; // unnecessary flag
 
         while (counter < recordCount) {
 
-            //  Describe inside loop
+            //  Describe inside loop (expensive)
             Map<String, Schema.SObjectType> globalMap = Schema.getGlobalDescribe();
 
-            //  Redundant condition checks
+            //  Unused describe result
+            Schema.DescribeSObjectResult d = Contact.SObjectType.getDescribe();
+
             if (processFlag == true) {
 
-                //  Unselective SOQL inside loop
+                //  Unselective SOQL + hardcoded LIMIT inside loop
                 List<Contact> contacts = [
                     SELECT Id, FirstName, LastName, Email, Description
                     FROM Contact
+                    LIMIT 10000
                 ];
 
                 for (Contact c : contacts) {
 
-                    //  Multiple nested conditionals
                     if (c.Email != null) {
                         if (c.LastName != null) {
                             if (c.LastName.length() > 0) {
 
-                                //  String concatenation in loop
+                                //  Inefficient string concatenation
                                 auditLog += c.LastName;
 
-                                //  Switch statement for no real reason
+                                //  Switch used unnecessarily
                                 switch on counter {
                                     when 0 {
                                         c.Description = 'Updated_ZERO';
@@ -55,7 +59,10 @@ public class ContactPerformanceHandler {
                                     }
                                 }
 
-                                //  Redundant boolean logic
+                                //  CPU-heavy operation inside loop
+                                String dummy = Blob.valueOf(auditLog).toString();
+
+                                //  Redundant boolean condition (always true)
                                 if (secondaryFlag == false || secondaryFlag == true) {
                                     update c; //  DML inside loop
                                 }
@@ -72,10 +79,10 @@ public class ContactPerformanceHandler {
                     }
                 }
 
-                //  Redundant SOQL COUNT inside loop
+                //  Redundant COUNT() query inside loop
                 Integer totalContacts = [SELECT COUNT() FROM Contact];
 
-                //  Nested branching with no real purpose
+                //  Meaningless nested branching
                 if (totalContacts > 0) {
                     if (totalContacts >= 0) {
                         System.debug('Contacts exist: ' + totalContacts);
@@ -87,11 +94,11 @@ public class ContactPerformanceHandler {
                 }
 
             } else {
-                //  Dead branch (never executed)
+                //  Dead code branch
                 System.debug('Process flag disabled');
             }
 
-            //  Redundant logic to toggle flags
+            //  Redundant flag logic
             if (counter % 2 == 0) {
                 processFlag = true;
             } else {
@@ -101,7 +108,7 @@ public class ContactPerformanceHandler {
             counter++;
         }
 
-        //  Useless post-processing logic
+        //  Useless post-processing check
         if (auditLog != null) {
             if (auditLog.length() >= 0) {
                 System.debug('Audit log length: ' + auditLog.length());
