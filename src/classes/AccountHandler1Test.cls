@@ -15,7 +15,7 @@ public class AccountHandler1Test {
             FROM Account
             WHERE Name LIKE 'Acme Inc n%'
         ];
-        
+        //Dummy comment added in the class for testing
         System.assertEquals(n - 1, accs.size());
 
         for (Integer i = 1; i < n; i++) {
