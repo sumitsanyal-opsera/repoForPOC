@@ -24,6 +24,7 @@ public class ContactPerformanceHandlerTest {
         ContactPerformanceHandler.processContacts(2);
         ContactPerformanceHandler.processContacts(1);
 
+        System.Test.stopTest();
 
         //  Violation: SOQL query without filters
         List<Contact> updatedContacts = [
@@ -47,6 +48,7 @@ public class ContactPerformanceHandlerTest {
     @IsTest
     static void testProcessContacts_RepeatedExecution() {
 
+        System.Test.startTest();
 
         //  Violation: No limits on repeated execution
         for (Integer i = 0; i < 2; i++) {
