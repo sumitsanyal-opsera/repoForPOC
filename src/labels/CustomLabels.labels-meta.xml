@@ -21,4 +21,18 @@
         <shortDescription>TestLabel3</shortDescription>
         <value>100000</value>
     </labels>
+    <labels>
+        <fullName>TestLabel1</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>TestLabel1</shortDescription>
+        <value>True</value>
+    </labels>
+    <labels>
+        <fullName>TestLabel2</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>TestLabel2</shortDescription>
+        <value>False</value>
+    </labels>
 </CustomLabels>
