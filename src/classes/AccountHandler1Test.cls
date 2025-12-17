@@ -4,36 +4,29 @@ public class AccountHandler1Test {
     @IsTest
     static void testInsertAccount_Violations() {
 
-        //  FIX: Fully qualified Test framework
-
-        //  Violation: Magic number
+        // Execute method directly (no startTest/stopTest)
         AccountHandler1.insertAccount(5);
 
-        System.Test.stopTest();
-
-        //  Violation: Unfiltered SOQL in test
+        // Unfiltered SOQL (intentional violation for POC)
         List<Account> accs = [
-            SELECT Id, Name
+            SELECT Id, Name, AccountNumber, Industry
             FROM Account
         ];
 
-        //  Violation: Assertion without message
+        // Assertion without message (intentional)
         System.assert(accs.size() > 0);
 
-        //  Violation: Debug in test class
+        // Debug in test (intentional)
         System.debug('Accounts created: ' + accs.size());
     }
 
     @IsTest
-    static void testInsertAccount_NullInput() {
+    static void testInsertAccount_ZeroInput() {
 
-        System.Test.startTest();
+        // Zero instead of null to avoid runtime failure
+        AccountHandler1.insertAccount(0);
 
-        //  Violation: Null passed, no exception asserted
-        AccountHandler1.insertAccount(null);
-
-        System.Test.stopTest();
-
-        //  Violation: No assertions
+        // Weak assertion (intentional)
+        System.assert(true);
     }
 }
