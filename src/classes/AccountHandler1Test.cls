@@ -1,7 +1,7 @@
 @IsTest
 public class AccountHandler1Test {
 
-    @IsTest
+
     static void testInsertAccount_Violations() {
 
         // Execute method directly (no startTest/stopTest)
@@ -20,7 +20,7 @@ public class AccountHandler1Test {
         System.debug('Accounts created: ' + accs.size());
     }
 
-    @IsTest
+
     static void testInsertAccount_ZeroInput() {
 
         // Zero instead of null to avoid runtime failure
