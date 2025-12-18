@@ -18,8 +18,6 @@ public class ContactPerformanceHandlerTest {
             SELECT Id FROM Contact
         ];
 
-        System.Test.startTest();
-
         //  Violation: Calling inefficient logic multiple times
         ContactPerformanceHandler.processContacts(2);
         ContactPerformanceHandler.processContacts(1);
