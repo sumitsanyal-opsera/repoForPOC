@@ -1,7 +1,7 @@
-public class InsecureContactService {
+class InsecureContactService {
 
     //  This method intentionally contains multiple security violations
-    public static List<Contact> fetchAndUpdateContacts(String userInput, String newDescription) {
+    public  List<Contact> fetchAndUpdateContacts(String userInput, String newDescription) {
 
         // ------------------------------------------------------------
         // Apex SOQL Injection Violation
@@ -33,7 +33,7 @@ public class InsecureContactService {
     }
 
     // Additional method to introduce Delete CRUD violation
-    public static void deleteContactsByEmail(String emailFragment) {
+    public  void deleteContactsByEmail(String emailFragment) {
 
         // SOQL Injection Violation (again, for rule certainty)
         String unsafeQuery =
