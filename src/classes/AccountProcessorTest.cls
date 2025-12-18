@@ -14,8 +14,6 @@ public class AccountProcessorTest {
         Set<Id> setAccId=new Set<Id>();
         setAccId.add(a.Id);
         
-        System.Test.startTest();
-        
         AccountProcessor.countContacts(setAccId);
         
         System.Test.stopTest();
