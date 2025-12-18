@@ -29,6 +29,7 @@ public class InsecureContactService {
         update contacts;
 
         return contacts;
+//Dummy comment
     }
 
     // Additional method to introduce Delete CRUD violation
