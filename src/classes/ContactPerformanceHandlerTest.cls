@@ -2,10 +2,13 @@
 public class ContactPerformanceHandlerTest {
 
     @IsTest
-    static void testProcessContacts_PerformanceViolations() {
+    static void testProcessContacts_PerformanceAndCRUDViolations() {
 
         //  Violation: Test data created repeatedly without @testSetup
         for (Integer i = 0; i < 3; i++) {
+
+            //  CRUD/FLS Violation:
+            //  Inserting Contact without checking create access
             insert new Contact(
                 FirstName = 'Test',
                 LastName  = 'User' + i,
@@ -13,9 +16,11 @@ public class ContactPerformanceHandlerTest {
             );
         }
 
-        //  Violation: Re-querying test data unnecessarily
+        //  CRUD Violation:
+        //  SOQL executed without checking isAccessible()
         List<Contact> contacts = [
-            SELECT Id FROM Contact
+            SELECT Id, Email
+            FROM Contact
         ];
 
         //  Violation: Calling inefficient logic multiple times
@@ -24,11 +29,23 @@ public class ContactPerformanceHandlerTest {
 
         System.Test.stopTest();
 
-        //  Violation: SOQL query without filters
+        //  CRUD/FLS Violation:
+        //  Reading and updating fields without field-level security checks
         List<Contact> updatedContacts = [
             SELECT Id, Description
             FROM Contact
         ];
+
+        for (Contact c : updatedContacts) {
+
+            //  CRUD/FLS Violation:
+            //  Updating records without update permission check
+            c.Description = 'Updated by test';
+        }
+
+        //  CRUD Violation:
+        //  DML update without Schema.sObjectType.Contact.isUpdateable()
+        update updatedContacts;
 
         //  Violation: Inefficient loop just to assert existence
         Boolean found = false;
@@ -43,15 +60,22 @@ public class ContactPerformanceHandlerTest {
         System.debug('Total contacts processed: ' + updatedContacts.size());
     }
 
-    
-    static void testProcessContacts_RepeatedExecution() {
+    @IsTest
+    static void testProcessContacts_RepeatedExecution_WithCRUDIssues() {
 
-    
-
-        //  Violation: No limits on repeated execution
+        //  Violation: Repeated execution without limits or assertions
         for (Integer i = 0; i < 2; i++) {
             ContactPerformanceHandler.processContacts(1);
         }
+
+        //  CRUD Violation:
+        //  Delete operation without delete permission check
+        List<Contact> contactsToDelete = [
+            SELECT Id
+            FROM Contact
+        ];
+
+        delete contactsToDelete;
 
         System.Test.stopTest();
 
