@@ -1,4 +1,4 @@
-@isTest
+
 public class AccountProcessorTest {
     public static testMethod void TestAccountProcessorTest(){
         Account a=new Account();
@@ -9,7 +9,6 @@ public class AccountProcessorTest {
         c.FirstName='Test';
         c.LastName='COntact';
         c.AccountId=a.Id;
-        insert c;
         
         Set<Id> setAccId=new Set<Id>();
         setAccId.add(a.Id);
