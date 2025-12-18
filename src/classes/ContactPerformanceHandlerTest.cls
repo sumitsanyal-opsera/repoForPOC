@@ -2,7 +2,7 @@
 public class ContactPerformanceHandlerTest {
 
     @IsTest
-    static void testProcessContacts_PerformanceAndCRUDViolations() {
+    static testProcessContacts_PerformanceAndCRUDViolations() {
 
         //  Violation: Test data created repeatedly without @testSetup
         for (Integer i = 0; i < 3; i++) {
@@ -76,8 +76,6 @@ public class ContactPerformanceHandlerTest {
         ];
 
         delete contactsToDelete;
-
-        System.Test.stopTest();
 
         //  Violation: No assertions validating behavior
     }
