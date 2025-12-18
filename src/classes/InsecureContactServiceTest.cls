@@ -1,7 +1,7 @@
 @IsTest
 public class InsecureContactServiceTest {
 
-    @testSetup
+   
     static void setupData() {
 
         List<Contact> contacts = new List<Contact>();
@@ -17,7 +17,6 @@ public class InsecureContactServiceTest {
         insert contacts;
     }
 
-    @IsTest
     static void testFetchAndUpdateContacts() {
 
         List<Contact> result =
