@@ -5,7 +5,7 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>DummyLabel1</shortDescription>
-        <value>true</value>
+        <value>Dummy Test</value>
     </labels>
     <labels>
         <fullName>DummyLabel2</fullName>
