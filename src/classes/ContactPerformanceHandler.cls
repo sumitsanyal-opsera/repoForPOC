@@ -11,7 +11,7 @@ public class ContactPerformanceHandler {
     // - No exception handling
     // - Excessive debug logging
 
-    public processContacts(Integer recordCount) {
+    public static void processContacts(Integer recordCount) {
 
         Integer counter = 0; //  Magic number
         String auditLog = ''; //  Inefficient string concatenation

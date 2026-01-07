@@ -10,6 +10,34 @@
     </customLabels>
     <customLabels>
         <label/>
+        <name>DummyLabel3</name>
+    </customLabels>
+    <customLabels>
+        <label/>
+        <name>DummyLabel4</name>
+    </customLabels>
+    <customLabels>
+        <label/>
+        <name>DummyLabel5</name>
+    </customLabels>
+    <customLabels>
+        <label/>
         <name>TestLabel1</name>
+    </customLabels>
+    <customLabels>
+        <label/>
+        <name>TestLabel2</name>
+    </customLabels>
+    <customLabels>
+        <label/>
+        <name>TestLabel3</name>
+    </customLabels>
+    <customLabels>
+        <label/>
+        <name>TestLabel4</name>
+    </customLabels>
+    <customLabels>
+        <label/>
+        <name>TestLabel5</name>
     </customLabels>
 </Translations>
