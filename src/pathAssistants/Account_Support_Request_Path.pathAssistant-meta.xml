@@ -11,9 +11,6 @@
     <pathAssistantSteps>
         <fieldNames>Name</fieldNames>
         <fieldNames>OwnerId</fieldNames>
-        <fieldNames>AccountNumber</fieldNames>
-        <fieldNames>Active__c</fieldNames>
-        <fieldNames>AccountSource</fieldNames>
         <info>&lt;p&gt;Add dummy text&lt;/p&gt;</info>
         <picklistValueName>Web</picklistValueName>
     </pathAssistantSteps>
