@@ -19,6 +19,8 @@ public class AccountHandler1 {
         //  Violation: Excessive debug logs (log flooding)
         System.debug('Executing Query: ' + vulnerableQuery);
         System.debug('Query Result: ' + result);
+        
+        //Adding comment for test purpose
 
         //  Violation: Loop boundary depends on unvalidated input
         while (counter < n) {
