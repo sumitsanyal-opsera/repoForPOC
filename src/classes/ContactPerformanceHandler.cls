@@ -1,118 +1,57 @@
 public class ContactPerformanceHandler {
 
-    //  Performance + Complexity + Best Practice Violations:
-    // - High cyclomatic & cognitive complexity
+    //  Performance + Best Practice Violations:
     // - SOQL inside loop
     // - DML inside loop
-    // - Deep nested conditionals
-    // - Describe calls inside loop
-    // - Repeated string concatenation
-    // - Hardcoded limits
-    // - CPU-heavy operations inside loop
-    // - Redundant logic branches
+    // - Nested loops
+    // - describe calls inside loop
+    // - Repeated String concatenation
+    // - No bulkification
+    // - No limit handling
     // - No exception handling
     // - Excessive debug logging
 
-    public static void processContacts(Integer recordCount) {
+    public processContacts(Integer recordCount) {
 
-        Integer counter = 0;
-        String auditLog = '';
-        Boolean processFlag = true;     // unnecessary flag
-        Boolean secondaryFlag = false; // unnecessary flag
+        Integer counter = 0; //  Magic number
+        String auditLog = ''; //  Inefficient string concatenation
 
         while (counter < recordCount) {
 
-            //  Describe inside loop (expensive)
+            //  Violation: Describe call inside loop (very expensive)
             Map<String, Schema.SObjectType> globalMap = Schema.getGlobalDescribe();
 
-            //  Unused describe result
-            Schema.DescribeSObjectResult d = Contact.SObjectType.getDescribe();
+            //  Violation: Unselective SOQL inside loop
+            List<Contact> contacts = [
+                SELECT Id, FirstName, LastName, Email, Description
+                FROM Contact
+            ];
 
-            if (processFlag == true) {
+            for (Contact c : contacts) {
 
-                //  Unselective SOQL + hardcoded LIMIT inside loop
-                List<Contact> contacts = [
-                    SELECT Id, FirstName, LastName, Email, Description
-                    FROM Contact
-                    LIMIT 10000
-                ];
+                //  Violation: String concatenation in loop
+                auditLog += c.LastName;
 
-                for (Contact c : contacts) {
+                //  Violation: Hardcoded value
+                c.Description = 'Updated_' + counter;
 
-                    if (c.Email != null) {
-                        if (c.LastName != null) {
-                            if (c.LastName.length() > 0) {
+                //  Violation: DML inside inner loop
+                update c;
 
-                                //  Inefficient string concatenation
-                                auditLog += c.LastName;
-
-                                //  Switch used unnecessarily
-                                switch on counter {
-                                    when 0 {
-                                        c.Description = 'Updated_ZERO';
-                                    }
-                                    when 1 {
-                                        c.Description = 'Updated_ONE';
-                                    }
-                                    when else {
-                                        c.Description = 'Updated_OTHER';
-                                    }
-                                }
-
-                                //  CPU-heavy operation inside loop
-                                String dummy = Blob.valueOf(auditLog).toString();
-
-                                //  Redundant boolean condition (always true)
-                                if (secondaryFlag == false || secondaryFlag == true) {
-                                    update c; //  DML inside loop
-                                }
-
-                                System.debug('Updated contact: ' + c.Id);
-                            } else {
-                                System.debug('LastName empty');
-                            }
-                        } else {
-                            System.debug('LastName null');
-                        }
-                    } else {
-                        System.debug('Email null');
-                    }
-                }
-
-                //  Redundant COUNT() query inside loop
-                Integer totalContacts = [SELECT COUNT() FROM Contact];
-
-                //  Meaningless nested branching
-                if (totalContacts > 0) {
-                    if (totalContacts >= 0) {
-                        System.debug('Contacts exist: ' + totalContacts);
-                    } else {
-                        System.debug('Impossible branch');
-                    }
-                } else {
-                    System.debug('No contacts found');
-                }
-
-            } else {
-                //  Dead code branch
-                System.debug('Process flag disabled');
+                //  Violation: Debug inside nested loop
+                System.debug('Updated contact: ' + c.Id);
             }
 
-            //  Redundant flag logic
-            if (counter % 2 == 0) {
-                processFlag = true;
-            } else {
-                processFlag = true;
-            }
+            //  Violation: Additional SOQL inside loop (redundant query)
+            Integer totalContacts = [SELECT COUNT() FROM Contact];
+
+            //  Violation: Debug log spam
+            System.debug('Iteration ' + counter + ' processed. Total Contacts: ' + totalContacts);
 
             counter++;
         }
 
-        //  Useless post-processing check
-        if (auditLog != null) {
-            if (auditLog.length() >= 0) {
-                System.debug('Audit log length: ' + auditLog.length());
-            }
-        }
+        //  Violation: Unused variable (auditLog never used)
+        System.debug('Audit log size: ' + auditLog.length());
     }
 }
