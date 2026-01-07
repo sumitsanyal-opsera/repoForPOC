@@ -81,7 +81,8 @@ if (Math.mod(counter, 2) == 0) {
 
         // DML without size check or partial handling
         insert addAccounts;
-
+        
+        //Test comment in the Apex Class for validation
         System.debug('Bulk insert completed. Total records: ' + addAccounts.size());
     }
 }
