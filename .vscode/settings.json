@@ -1,0 +1,10 @@
+{
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/.sf": true,
+    "**/.sfdx": true
+  },
+  "xml.preferences.showSchemaDocumentationType": "none",
+  "opsera-ai-assistant.accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lciI6Im9wc2VyYSIsImFjY291bnQiOiJvcmcxMDRkLWFjYzAiLCJ1c2VyTmFtZSI6IlN1bWl0IiwiZW1haWwiOiJzdW1pdC5zYW55YWxAb3BzZXJhLnVzIiwidXNlcklkIjoiNjhmMGNhMzhmNWM3MGQyYjdhM2Y0OWY1Iiwic2NvcGUiOiJhcGkiLCJ0b2tlbklkIjoiNjk1ZTBkNDM3OGVlNzcwZDhiMGE3ZTEwIiwiaWF0IjoxNzY3NzcxNDU5LCJleHAiOjE3NzU1NDc0NTl9.UZEKbi4TdQ3_o_IWDW8dmwqQf0Psrl6kE_lzc_rSfAc"
+}
