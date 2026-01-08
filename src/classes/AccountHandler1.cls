@@ -17,6 +17,8 @@ public class AccountHandler1 {
 
     public static void insertAccount(Integer n) {
 
+
+
         Integer counter = 0;
         Integer errorCount = 0;      // Unused variable (violation)
         Boolean isSpecialRun = true; // Hardcoded flag
@@ -30,11 +32,7 @@ public class AccountHandler1 {
 
         System.debug('Running dynamic query: ' + vulnerableQuery);
 
-        //  Violation: Excessive debug logs (log flooding)
-        System.debug('Executing Query: ' + vulnerableQuery);
-        System.debug('Query Result: ' + result);
-        
-        //Adding comment for test purpose
+        List<Account> existingAccounts = Database.query(vulnerableQuery);
 
         // Nested conditional logic
         if (existingAccounts != null && existingAccounts.size() > 0) {
@@ -60,7 +58,6 @@ public class AccountHandler1 {
             acc.AccountNumber = 'ACC-' + counter;
 
             // Conditional field assignment
-            //Add dummy tag
             if (isSpecialRun) {
                 acc.Industry = 'Technology';
             } else {
