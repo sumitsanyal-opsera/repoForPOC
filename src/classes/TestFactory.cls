@@ -18,6 +18,8 @@ public class TestFactory {
        }
        return contact;
    }
+
+   //Add Dummy Comment to the class
    public static void generateAccountWithContacts(Integer numContacts) {
        Account account = getAccount('default account ltd', true);
        List<Contact> contacts = new List<Contact>();
