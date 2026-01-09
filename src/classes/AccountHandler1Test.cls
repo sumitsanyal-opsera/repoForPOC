@@ -16,6 +16,7 @@ public class AccountHandler1Test {
         //  System.debug vulnerability (intentional)
         System.debug('Number of accounts created: ' + accs.size());
 
+        // Adding Test comment in the class
         System.assert(
             accs.size() > 0,
             'Accounts should be created when a positive number is passed'
