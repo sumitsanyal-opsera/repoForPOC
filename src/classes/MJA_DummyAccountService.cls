@@ -1,4 +1,4 @@
-public class DummyAccountService {
+public class MJA_DummyAccountService {
 
     // Simple method to create Accounts
     public static List<Account> createDummyAccounts(Integer count) {
