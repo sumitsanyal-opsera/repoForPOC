@@ -26,7 +26,7 @@ public class AccountHandler1Test {
     @IsTest
     static void testInsertAccount_WithZeroInput() {
 
-        System.Test.startTest();
+        //System.Test.startTest();
         AccountHandler1.insertAccount(0);
         System.Test.stopTest();
 

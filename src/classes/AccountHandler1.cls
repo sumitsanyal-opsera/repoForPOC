@@ -82,6 +82,8 @@ if (Math.mod(counter, 2) == 0) {
         }
 
         // DML without size check or partial handling
+
+        //Adding Dummy comment in the branch
         insert addAccounts;
 
         System.debug('Bulk insert completed. Total records: ' + addAccounts.size());
