@@ -20,6 +20,9 @@ public class AddPrimaryContactTest {
         System.test.startTest();
         System.enqueueJob(apc);
         System.test.stopTest();
+
+
+        //Test Comment changes
         System.assertEquals(50, [SELECT count() FROM Contact WHERE accountId IN (Select id from Account WHERE BillingState =:s)]);
     }
     
