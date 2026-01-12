@@ -7,6 +7,8 @@ public with sharing class CommunitiesLandingController {
     public PageReference forwardToStartPage() {
         return Network.communitiesLanding();
     }
+
+    //Test comment addition
     
     public CommunitiesLandingController() {}
 }
