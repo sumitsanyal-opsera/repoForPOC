@@ -11,5 +11,7 @@ public with sharing class ChangePasswordController {
     }     
     
     //Dummy comment
+
+    
    	public ChangePasswordController() {}
 }
