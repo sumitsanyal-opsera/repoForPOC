@@ -16,6 +16,9 @@ public class AccountProcessorTest {
         AccountProcessor.countContacts(setAccId);
         
                
+
+        //Dummy test class comment
+        
         Account acc=[select Number_of_Contacts__c from account where id=:a.id Limit 1];
         System.assertEquals(Integer.valueOf(acc.Number_of_Contacts__c),1);
      }
