@@ -28,6 +28,8 @@ public class DummyAccountService {
         ];
     }
 
+    
+
     // Simple update method
     public static void updateDummyAccountName(Id accountId, String newName) {
         Account acc = [SELECT Id, Name FROM Account WHERE Id = :accountId LIMIT 1];
