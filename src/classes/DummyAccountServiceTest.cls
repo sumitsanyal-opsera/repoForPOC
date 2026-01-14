@@ -19,6 +19,8 @@ public class DummyAccountServiceTest {
         System.assertEquals(2, createdAccounts.size(), 'Two accounts should be created');
     }
 
+    //Test comment
+
     @IsTest
     static void testFetchDummyAccounts() {
         System.Test.startTest();
