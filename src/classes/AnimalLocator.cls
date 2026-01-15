@@ -6,6 +6,9 @@ public class AnimalLocator{
         req.setMethod('GET');
         Map<String, Object> animal= new Map<String, Object>();
         HttpResponse res = http.send(req);
+
+        //Test comment
+        
         if (res.getStatusCode() == 200) {
             Map<String, Object> results = (Map<String, Object>)JSON.deserializeUntyped(res.getBody());
             animal = (Map<String, Object>) results.get('animal');
