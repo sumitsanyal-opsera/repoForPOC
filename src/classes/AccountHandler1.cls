@@ -65,6 +65,8 @@ public class AccountHandler1 {
             }
 
             // DML inside loop (new violation)
+
+            
 if (Math.mod(counter, 2) == 0) {
     insert acc;
     System.debug('Inserted account individually: ' + acc.Name);
