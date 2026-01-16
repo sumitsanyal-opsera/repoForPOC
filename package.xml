@@ -7,10 +7,8 @@
         <members>ContactPerformanceHandler</members>
         <members>InsecureContactService</members>
         <members>ContactPerformanceHandlerTest</members>
+        <members>CommunitiesLandingController</members>
         <members>TestFactory</members>
-        <members>InsecureContactServiceTest</members>
-        <members>AccountHandler1Test</members>
-        <members>AccountHandler</members>
     </types>
     <types>
         <name>CompactLayout</name>
@@ -56,6 +54,10 @@
     <types>
         <name>CustomObjectTranslation</name>
         <members>Account-en_US</members>
+    </types>
+    <types>
+        <name>LightningComponentBundle</name>
+        <members>featureTogglePoc</members>
     </types>
     <types>
         <name>ListView</name>
