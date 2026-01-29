@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Status__c</fullName>
-    <label>Status</label>
-    <required>false</required>
+    <label>Statuses</label>
+    <required>true</required>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
@@ -13,17 +13,17 @@
             <value>
                 <fullName>Not Started</fullName>
                 <default>false</default>
-                <label>Not Started</label>
+                <label>Not Start</label>
             </value>
             <value>
                 <fullName>In Progress</fullName>
                 <default>false</default>
-                <label>In Progress</label>
+                <label>In-Progress</label>
             </value>
             <value>
                 <fullName>Completed</fullName>
                 <default>false</default>
-                <label>Completed</label>
+                <label>Complete</label>
             </value>
         </valueSetDefinition>
     </valueSet>
