@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>AccountHandler1</members>
+        <members>AccountHandler1Test</members>
+        <members>ContactPerformanceHandler</members>
+        <members>ContactPerformanceHandlerTest</members>
+        <members>DummyAccountService</members>
+        <members>DummyAccountServiceTest</members>
+        <members>InsecureContactService</members>
+        <members>InsecureContactServiceTest</members>
+        <members>POC_AccountService</members>
+        <members>POC_AccountServiceTest</members>
+        <members>POC_ContactService</members>
+        <members>POC_ContactServiceTest</members>
+        <members>POC_ContactTriggerHandler</members>
+        <members>POC_ContactTriggerTest</members>
+        <members>ProjectTaskService</members>
+        <members>ProjectTaskUtility</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>POC_ContactTrigger</members>
+        <name>ApexTrigger</name>
+    </types>
+    <version>65.0</version>
+</Package>
