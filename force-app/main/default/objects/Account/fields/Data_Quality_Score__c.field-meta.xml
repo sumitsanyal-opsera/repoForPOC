@@ -3,10 +3,10 @@
     <fullName>Data_Quality_Score__c</fullName>
     <externalId>false</externalId>
     <formula>IF( ISPICKVAL(Industry,&quot;&quot;), 0,20) + IF( ISPICKVAL(Rating,&quot;&quot;), 0,20) + IF( LEN(BillingCity) = 0, 0,20) + IF(LEN(Phone) = 0, 0,20) + IF( ISPICKVAL(Type,&quot;&quot;), 0,20)</formula>
-    <label>Data Quality Score</label>
-    <precision>18</precision>
-    <required>false</required>
-    <scale>0</scale>
+    <label>Data Quality Scores</label>
+    <precision>14</precision>
+    <required>true</required>
+    <scale>4</scale>
     <trackHistory>false</trackHistory>
     <type>Number</type>
     <unique>false</unique>
