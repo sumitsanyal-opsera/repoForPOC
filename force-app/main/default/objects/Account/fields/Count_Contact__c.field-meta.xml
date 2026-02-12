@@ -3,9 +3,9 @@
     <fullName>Count_Contact__c</fullName>
     <externalId>false</externalId>
     <label>Count Contacts</label>
-    <precision>16</precision>
+    <precision>18</precision>
     <required>false</required>
-    <scale>2</scale>
+    <scale>0</scale>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Number</type>
