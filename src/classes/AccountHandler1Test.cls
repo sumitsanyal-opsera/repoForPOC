@@ -2,31 +2,46 @@
 public class AccountHandler1Test {
 
     @IsTest
-    static void testInsertAccount_Violations() {
+    static void testInsertAccount_WithValidInput() {
 
-        // Execute method directly (no startTest/stopTest)
+        System.Test.startTest();
         AccountHandler1.insertAccount(5);
+        System.Test.stopTest();
 
-        // Unfiltered SOQL (intentional violation for POC)
         List<Account> accs = [
-            SELECT Id, Name, AccountNumber, Industry
+            SELECT Id, Name
             FROM Account
         ];
 
-        // Assertion without message (intentional)
-        System.assert(accs.size() > 0);
+        //  System.debug vulnerability (intentional)
+        System.debug('Number of accounts created: ' + accs.size());
 
-        // Debug in test (intentional)
-        System.debug('Accounts created: ' + accs.size());
+        // Adding Test comment in the class
+        System.assert(
+            accs.size() > 0,
+            'Accounts should be created when a positive number is passed'
+        );
     }
 
     @IsTest
-    static void testInsertAccount_ZeroInput() {
+    static void testInsertAccount_WithZeroInput() {
 
-        // Zero instead of null to avoid runtime failure
+        System.Test.startTest();
         AccountHandler1.insertAccount(0);
+        System.Test.stopTest();
 
-        // Weak assertion (intentional)
-        System.assert(true);
+        List<Account> accs = [
+            SELECT Id
+            FROM Account
+        ];
+
+        //  System.debug vulnerability (intentional)
+        System.debug('Accounts found for zero input: ' + accs.size());
+
+        System.assertEquals(
+            0,
+            accs.size(),
+            'No accounts should be created when input is zero'
+        );
     }
 }
