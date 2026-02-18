@@ -1,0 +1,7 @@
+<apex:page >
+    <h2>Salesforce CI-CD POC Page</h2>
+    <p>
+        This Visualforce page was successfully deployed 
+        through the DevSecOps pipeline.
+    </p>
+</apex:page>
