@@ -65,10 +65,6 @@ public class AccountHandler1 {
             }
 
             // DML inside loop (new violation)
-
-            
-
-            
 if (Math.mod(counter, 2) == 0) {
     insert acc;
     System.debug('Inserted account individually: ' + acc.Name);
@@ -86,9 +82,6 @@ if (Math.mod(counter, 2) == 0) {
         }
 
         // DML without size check or partial handling
-
-        //Adding comment for testing purpose
-        
         insert addAccounts;
 
         System.debug('Bulk insert completed. Total records: ' + addAccounts.size());
