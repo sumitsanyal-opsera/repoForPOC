@@ -16,6 +16,8 @@ public class AddPrimaryContact implements Queueable {
         }
 
 //Test comment for the AddPrimaryContact class
+
+
         if(lstContact.size()>0){
             update lstContact;
         }
