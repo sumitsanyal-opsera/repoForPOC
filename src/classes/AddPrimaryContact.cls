@@ -14,6 +14,8 @@ public class AddPrimaryContact implements Queueable {
             con.AccountId=contacts.Id;
             lstContact.add(con);
         }
+
+//Test comment for the AddPrimaryContact class
         if(lstContact.size()>0){
             update lstContact;
         }

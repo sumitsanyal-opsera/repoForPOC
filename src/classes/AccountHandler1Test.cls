@@ -14,6 +14,10 @@ public class AccountHandler1Test {
         ];
 
         //  System.debug vulnerability (intentional)
+
+        //Test comments
+        
+        
         //Test comment for changes
 
 
@@ -29,7 +33,7 @@ public class AccountHandler1Test {
     @IsTest
     static void testInsertAccount_WithZeroInput() {
 
-        System.Test.startTest();
+        //System.Test.startTest();
         AccountHandler1.insertAccount(0);
         System.Test.stopTest();
 
@@ -41,6 +45,8 @@ public class AccountHandler1Test {
         //  System.debug vulnerability (intentional)
         System.debug('Accounts found for zero input: ' + accs.size());
 
+        //Test comment
+        
         System.assertEquals(
             0,
             accs.size(),
