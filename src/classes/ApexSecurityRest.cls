@@ -16,6 +16,8 @@ global with sharing class ApexSecurityRest {
 
            return result;
       }
+
+    //Test comment
       public class FunctionalException extends Exception{}
       public class SecurityException extends Exception{}
 }
