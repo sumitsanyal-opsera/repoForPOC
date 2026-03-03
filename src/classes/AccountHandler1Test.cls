@@ -13,11 +13,9 @@ public class AccountHandler1Test {
             FROM Account
         ];
 
-        //  System.debug vulnerability (intentional)
+        //System.debug vulnerability (intentional)
 
         //Test comments
-        
-        
         //Test comment for changes
 
 
