@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+  <types>
+    <name>WaveDashboard</name>
+    <members>Dashboard_XMD_Test</members>
+    <members>Opps_by_stage_and_lead_source</members>
+  </types>
+  <types>
+    <name>WaveXmd</name>
+    <members>Opps_by_stage_and_lead_source</members>
+    <members>Dashboard_XMD_Test</members>
+  </types>
+<version>66.0</version></Package>
