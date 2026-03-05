@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
   <types>
-    <name>ApexTestSuite</name>
-    <members>Sumit_Apex_Suite</members>
+    <name>ApexClass</name>
+    <members>SimpleCalculator</members>
+    <members>SimpleCalculatorTest</members>
   </types>
-  <types>
-    <name>ApexTrigger</name>
-    <members>POC_ContactTrigger</members>
-  </types>
-  <version>65.0</version>
+  <version>66.0</version>
 </Package>
