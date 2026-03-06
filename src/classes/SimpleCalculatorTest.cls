@@ -10,6 +10,8 @@ public class SimpleCalculatorTest {
     // Dummy comments added
     // Added by Sumit
     
+    //Test class
+    
     @isTest
     static void testMultiplyNumbers() {
         Integer result = SimpleCalculator.multiplyNumbers(4, 5);

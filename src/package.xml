@@ -2,9 +2,9 @@
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
   <types>
     <name>ApexClass</name>
-    <members>AccountServiceTest</members>
-    <members>AccountService</members>
     <members>SimpleCalculator</members>
+    <members>AccountServiceTest</members>
     <members>SimpleCalculatorTest</members>
+    <members>AccountService</members>
   </types>
 <version>66.0</version></Package>
