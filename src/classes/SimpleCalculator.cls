@@ -6,6 +6,8 @@ public class SimpleCalculator {
     
     // Dummy comments
     
+    //Test comment
+    
     public static Integer multiplyNumbers(Integer a, Integer b) {
         return a * b;
     }
