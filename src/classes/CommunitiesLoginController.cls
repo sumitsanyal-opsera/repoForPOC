@@ -6,7 +6,7 @@ global with sharing class CommunitiesLoginController {
     global CommunitiesLoginController () {}
     
     // Code we will invoke on page load.
-    //Test comment for merge
+    //Test comments for branch merge
 
     global PageReference forwardToAuthPage() {
     	String startUrl = System.currentPageReference().getParameters().get('startURL');
