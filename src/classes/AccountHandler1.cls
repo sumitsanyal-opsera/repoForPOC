@@ -85,7 +85,6 @@ if (Math.mod(counter, 2) == 0) {
 
             counter++;
         }
-
         // DML without size check or partial handling
 
         //Adding comment for testing purpose
