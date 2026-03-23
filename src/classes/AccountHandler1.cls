@@ -18,7 +18,6 @@ public class AccountHandler1 {
     public static void insertAccount(Integer n) {
 
 
-//Dummy comment
 //Test comment
         Integer counter = 0;
         Integer errorCount = 0;      // Unused variable (violation)
@@ -45,6 +44,7 @@ public class AccountHandler1 {
             ];
 
             System.debug('Tech accounts count: ' + techAccounts.size());
+            //Apex Class for AccountHandler created
         } else {
             System.debug('No existing accounts found.');
         }
@@ -78,8 +78,6 @@ if (Math.mod(counter, 2) == 0) {
 }
 
 
-
-
             // Redundant logic
             if (counter == n - 1) {
                 System.debug('Last iteration reached');
@@ -87,9 +85,6 @@ if (Math.mod(counter, 2) == 0) {
 
             counter++;
         }
-
-
-        
         // DML without size check or partial handling
 
         //Adding comment for testing purpose
