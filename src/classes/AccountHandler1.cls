@@ -18,13 +18,13 @@ public class AccountHandler1 {
     public static void insertAccount(Integer n) {
 
 
-//Test comment
+    //Test comment
         Integer counter = 0;
         Integer errorCount = 0;      // Unused variable (violation)
         Boolean isSpecialRun = true; // Hardcoded flag
 
         List<Account> addAccounts = new List<Account>();
-
+        // New Test Comment added by Sumit
         // SOQL Injection vulnerability (continued)
         // New Test Comment added
         String unsafeSearchText = String.valueOf(n);
