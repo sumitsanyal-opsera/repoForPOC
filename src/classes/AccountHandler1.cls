@@ -44,6 +44,7 @@ public class AccountHandler1 {
             ];
 
             System.debug('Tech accounts count: ' + techAccounts.size());
+            //Apex Class for AccountHandler created
         } else {
             System.debug('No existing accounts found.');
         }
