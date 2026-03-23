@@ -26,6 +26,7 @@ public class AccountHandler1 {
         List<Account> addAccounts = new List<Account>();
 
         // SOQL Injection vulnerability (continued)
+        // New Test Comment added
         String unsafeSearchText = String.valueOf(n);
         String vulnerableQuery =
             'SELECT Id, Name, Industry FROM Account WHERE Name LIKE \'%' + unsafeSearchText + '%\'';
