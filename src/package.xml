@@ -3,5 +3,6 @@
   <types>
     <name>ApexClass</name>
     <members>AccountHandler1</members>
+    <members>AccountService</members>
   </types>
 <version>66.0</version></Package>
