@@ -24,7 +24,7 @@ public class AccountHandler1 {
         Boolean isSpecialRun = true; // Hardcoded flag
 
         List<Account> addAccounts = new List<Account>();
-        // New Test Comment added by Sumit
+        // New Test Comment added by me
         // SOQL Injection vulnerability (continued)
         // New Test Comment added
         String unsafeSearchText = String.valueOf(n);
@@ -49,7 +49,7 @@ public class AccountHandler1 {
         } else {
             System.debug('No existing accounts found.');
         }
-        // New Test Comment added by Sumit
+        // New Test Comment added
         // Loop controlled by unvalidated input
         while (counter < n) {
 
@@ -78,7 +78,7 @@ if (Math.mod(counter, 2) == 0) {
     addAccounts.add(acc);
 }
 
-        // New Test Comment
+        // New Test Comment by Sumit
             // Redundant logic
             if (counter == n - 1) {
                 System.debug('Last iteration reached');
@@ -93,5 +93,6 @@ if (Math.mod(counter, 2) == 0) {
         insert addAccounts;
         // New Test Comment added by Sumit
         System.debug('Bulk insert completed. Total records: ' + addAccounts.size());
+// New Test Comment added by Sumit
     }
 }
