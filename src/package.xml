@@ -2,6 +2,7 @@
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
   <types>
     <name>ApexClass</name>
-    <members>AccountHandler1</members>
+    <members>ContactService</members>
+    <members>ContactServiceTest</members>
   </types>
 <version>66.0</version></Package>
