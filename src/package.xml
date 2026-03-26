@@ -3,6 +3,5 @@
   <types>
     <name>ApexClass</name>
     <members>DummyPOCService</members>
-    <members>DummyPOCServiceTest</members>
   </types>
 <version>66.0</version></Package>
