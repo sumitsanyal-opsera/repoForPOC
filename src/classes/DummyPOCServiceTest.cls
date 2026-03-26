@@ -14,6 +14,7 @@ public class DummyPOCServiceTest {
     }
     
     @isTest
+    // Test comment
     static void testAddNumbers_NormalCase() {
         Integer result = DummyPOCService.addNumbers(5, 10);
         System.assertEquals(15, result, 'Addition logic failed');
