@@ -21,6 +21,7 @@ public class DummyPOCServiceTest {
     }
     
     @isTest
+    // New test comment added
     static void testAddNumbers_WithNulls() {
         Integer result = DummyPOCService.addNumbers(null, 5);
         System.assertEquals(5, result, 'Null handling failed');
