@@ -1,29 +1,89 @@
 public class AccountHandler1 {
-    public static void insertAccount(Integer n){
-        Integer counter = 1;
+
+    //  Violations Introduced / Continued:
+    //  - High cyclomatic & cognitive complexity
+    //  - Multiple responsibilities in a single method
+    //  - SOQL & DML mixed with business logic
+    //  - SOQL inside conditional branches
+    //  - Dynamic SOQL with string concatenation
+    //  - DML inside loop (new violation)
+    //  - No input validation
+    //  - No exception handling
+    //  - Hardcoded values
+    //  - Excessive debug logs
+    //  - Unused variables
+    //  - Nested conditionals
+    //  - No bulk-safe design
+
+    public static void insertAccount(Integer n) {
+
+        Integer counter = 0;
+        Integer errorCount = 0;      // Unused variable (violation)
+        Boolean isSpecialRun = true; // Hardcoded flag
+
         List<Account> addAccounts = new List<Account>();
 
-        // Vulnerability: Using unvalidated user-supplied value inside SOQL dynamic query
-        // This is a common DevSecOps anti-pattern
-        String unsafeSearchText = String.valueOf(n);   // treated as "user input"
-        String vulnerableQuery = 'SELECT Id, Name FROM Account WHERE Name LIKE \'%' + unsafeSearchText + '%\'';
+        // SOQL Injection vulnerability (continued)
+        String unsafeSearchText = String.valueOf(n);
+        String vulnerableQuery =
+            'SELECT Id, Name, Industry FROM Account WHERE Name LIKE \'%' + unsafeSearchText + '%\'';
 
-        // Executing unsafe dynamic SOQL → SOQL Injection Vulnerability
-        List<Account> result = Database.query(vulnerableQuery);
-        System.debug('Vulnerable query executed: ' + vulnerableQuery);
-        System.debug('Query result: ' + result);
+        System.debug('Running dynamic query: ' + vulnerableQuery);
 
-        // Regular logic
-        while (counter < n) {
-            System.debug('Counter value before incrementing ' + counter);
-            Account store = new Account();
-            store.Name = 'Acme Inc n' + counter;
-            store.AccountNumber = 'A000n' + counter;
-            addAccounts.add(store);
-            counter = counter + 1;
+        List<Account> existingAccounts = Database.query(vulnerableQuery);
+
+        // Nested conditional logic
+        if (existingAccounts != null && existingAccounts.size() > 0) {
+            System.debug('Existing accounts found: ' + existingAccounts.size());
+
+            // SOQL inside conditional (violation)
+            List<Account> techAccounts = [
+                SELECT Id, Name FROM Account WHERE Industry = 'Technology'
+            ];
+
+            System.debug('Tech accounts count: ' + techAccounts.size());
+        } else {
+            System.debug('No existing accounts found.');
         }
 
-        System.debug('Size of Account List: ' + addAccounts.size());
+        // Loop controlled by unvalidated input
+        while (counter < n) {
+
+            System.debug('Processing counter: ' + counter);
+
+            Account acc = new Account();
+            acc.Name = 'Acme Inc ' + counter;
+            acc.AccountNumber = 'ACC-' + counter;
+
+            // Conditional field assignment
+            if (isSpecialRun) {
+                acc.Industry = 'Technology';
+            } else {
+                acc.Industry = 'Finance';
+            }
+
+            // DML inside loop (new violation)
+if (Math.mod(counter, 2) == 0) {
+    insert acc;
+    System.debug('Inserted account individually: ' + acc.Name);
+} else {
+    addAccounts.add(acc);
+}
+
+
+            // Redundant logic
+            if (counter == n - 1) {
+                System.debug('Last iteration reached');
+            }
+
+            counter++;
+        }
+
+        // DML without size check or partial handling
         insert addAccounts;
+
+        //Test comment in the Apex Class for validations
+        
+        System.debug('Bulk insert completed. Total records: ' + addAccounts.size());
     }
 }
