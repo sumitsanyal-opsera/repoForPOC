@@ -4,8 +4,8 @@ public class DataManager_ActivityTest {
         // SETUP
         DataManager_TestUtils.initAccs();
         DataManager_TestUtils.initOpps();
-		
-        // Create our Queueable instances
+        
+        // Create our Queueable
         DataManager_Activity activityCreator = new DataManager_Activity();
         
         // startTest/stopTest block to force async processes to run
@@ -13,6 +13,7 @@ public class DataManager_ActivityTest {
         System.enqueueJob(activityCreator);
         Test.stopTest();
         
+        //Test comment for update
         System.assertEquals(241, [SELECT count() FROM Event WHERE What.Name LIKE 'Opportunity for%']);
         System.assertEquals(241, [SELECT count() FROM Task WHERE What.Name LIKE 'Opportunity for%']); 
     }
