@@ -10,10 +10,10 @@ public class Class1 {
     }    
 	public Integer sub(Integer num1,Integer num2)
     {
-        num3=num1-num2;
+        num3=num1*num2;
 
         //Test comment
-        System.debug('*****Diference is:*****'+num3);
+        System.debug('*****Product is:*****'+num3);
         return num3;
     
 	}
