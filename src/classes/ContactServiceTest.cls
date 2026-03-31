@@ -19,7 +19,7 @@ public class ContactServiceTest {
             contacts[0].Description,
             'Description should be set for null value'
         );
-        // New Test Comments added by Sumit
+
         System.assertEquals(
             'Existing Description',
             contacts[1].Description,

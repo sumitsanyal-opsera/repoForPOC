@@ -8,7 +8,6 @@ public class DummyPOCServiceTest {
     }
     
     @isTest
-// New Test comment added
     static void testGetGreeting_WithoutName() {
         String result = DummyPOCService.getGreeting(null);
         System.assertEquals('Hello, Guest!', result, 'Greeting without name failed');
