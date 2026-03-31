@@ -31,7 +31,6 @@
     </processMetadataValues>
     <processType>Flow</processType>
     <screens>
-        <description>Test Screen</description>
         <name>Test_Screen</name>
         <label>Test Screen</label>
         <locationX>0</locationX>
@@ -65,5 +64,5 @@
             <targetReference>Test_Screen</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Obsolete</status>
 </Flow>

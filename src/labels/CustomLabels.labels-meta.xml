@@ -4,7 +4,7 @@
         <fullName>TestLabel1</fullName>
         <language>en_US</language>
         <protected>true</protected>
-        <shortDescription>TestLabel1</shortDescription>
+        <shortDescription>TestLab2el1</shortDescription>
         <value>True</value>
     </labels>
     <labels>
@@ -13,6 +13,13 @@
         <protected>true</protected>
         <shortDescription>TestLabel2</shortDescription>
         <value>False</value>
+        <labels>
+            <fullName>TestLabel3</fullName>
+            <language>en_US</language>
+            <protected>true</protected>
+            <shortDescription>TestLabel3</shortDescription>
+            <value>100000</value>
+        </labels>
     </labels>
     <labels>
         <fullName>TestLabel3</fullName>
