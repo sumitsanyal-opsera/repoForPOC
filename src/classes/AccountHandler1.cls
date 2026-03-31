@@ -33,6 +33,7 @@ public class AccountHandler1 {
 
         System.debug('Running dynamic query: ' + vulnerableQuery);
 
+        System.debug ('Hello World');
         List<Account> existingAccounts = Database.query(vulnerableQuery);
 
         // Nested conditional logic
