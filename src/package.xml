@@ -2,7 +2,15 @@
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
   <types>
     <name>ApexClass</name>
-    <members>DataManager_DataflowTest</members>
-    <members>DataManager_Dataflow</members>
+    <members>ContactService</members>
+    <members>DummyPOCServiceTest</members>
+    <members>DummyPOCService</members>
+    <members>TestTriggerTest</members>
+    <members>ContactServiceTest</members>
   </types>
-<version>66.0</version></Package>
+  <types>
+    <name>ApexTrigger</name>
+    <members>TestTrigger</members>
+  </types>
+  <version>66.0</version>
+</Package>
