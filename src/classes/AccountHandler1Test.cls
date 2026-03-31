@@ -36,10 +36,11 @@ public class AccountHandler1Test {
             SELECT Id
             FROM Account
         ];
-
+    
         //  System.debug vulnerability (intentional)
         System.debug('Accounts found for zero input: ' + accs.size());
 
+// Test comment added
         System.assertEquals(
             0,
             accs.size(),
