@@ -14,20 +14,17 @@ public class AccountHandler1Test {
         ];
 
         //  System.debug vulnerability (intentional)
-
-        // Test comments by Sumit
-        
-        
         System.debug('Number of accounts created: ' + accs.size());
 
         // Adding Test comment in the class
-        //Test comment for checking script
         System.assert(
             accs.size() > 0,
             'Accounts should be created when a positive number is passed'
         );
     }
 
+
+//Test comment
     @IsTest
     static void testInsertAccount_WithZeroInput() {
 
@@ -39,12 +36,11 @@ public class AccountHandler1Test {
             SELECT Id
             FROM Account
         ];
-
+    
         //  System.debug vulnerability (intentional)
         System.debug('Accounts found for zero input: ' + accs.size());
 
-        // Test comments by Sumit
-        
+// Test comment added
         System.assertEquals(
             0,
             accs.size(),

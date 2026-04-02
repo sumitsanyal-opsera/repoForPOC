@@ -11,8 +11,8 @@ public with sharing class DummyPOCService {
     // Sample method to calculate sum of two integers
     // New Dummy comment added
     public static Integer addNumbers(Integer a, Integer b) {
-        a = (a == null || a < 0) ? 0 : a;
-        b = (b == null || b < 0) ? 0 : b;
+        a = (a == null) ? 0 : a;
+        b = (b == null) ? 0 : b;
         return a + b;
     }
 }

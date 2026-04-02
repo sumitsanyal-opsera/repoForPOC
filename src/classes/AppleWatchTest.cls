@@ -1,11 +1,8 @@
 @isTest
 public class AppleWatchTest {
     
-
-    //test changes
     @isTest static void createOpportunity()
     {
-        
         Opportunity opp=new Opportunity();
         opp.Name      ='Swift Deal';
         opp.StageName ='Prospecting';

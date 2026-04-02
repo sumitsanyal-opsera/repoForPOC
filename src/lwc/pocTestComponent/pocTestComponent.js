@@ -9,8 +9,6 @@ export default class PocTestComponent extends LightningElement {
     }
 
     handleClick() {
-       // this.showMessage = this.name && this.name.trim().length > 0;
-
-       
+        this.showMessage = this.name && this.name.trim().length > 0;
     }
 }

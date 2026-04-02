@@ -3,7 +3,7 @@ public class DailyLeadProcessor implements schedulable {
         List<Lead> leadList=[Select id,name,LeadSource from Lead where LeadSource=Null];
         if(!leadList.isEmpty()){
             for(Lead l:leadList){
-                l.LeadSource='Dreamforces';
+                l.LeadSource='Dreamforce';
             }
             update leadList;            
             

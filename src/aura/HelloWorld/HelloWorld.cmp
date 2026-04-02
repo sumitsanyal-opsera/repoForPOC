@@ -1,0 +1,9 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name="greeting" type="String" default="World"/>
+    <div class="slds-card">
+        <div class="slds-card_body slds-card-body_inner slds-p-top_medium">
+            <lightning:input type="date" name="input1" label="Enter a date" value="2020-10/04" />
+        </div>
+    </div>
+	
+</aura:component>

@@ -1,6 +1,6 @@
-
+@isTest
 public class AccountProcessorTest {
-    static testMethod TestAccountProcessorTest(){
+    public static testMethod void TestAccountProcessorTest(){
         Account a=new Account();
         a.Name='Test Account';
         insert a;
@@ -9,13 +9,17 @@ public class AccountProcessorTest {
         c.FirstName='Test';
         c.LastName='COntact';
         c.AccountId=a.Id;
+        insert c;
         
         Set<Id> setAccId=new Set<Id>();
         setAccId.add(a.Id);
-        // New Test Comment Added
+        
+        System.Test.startTest();
+        
         AccountProcessor.countContacts(setAccId);
         
-               
+        System.Test.stopTest();
+        
         Account acc=[select Number_of_Contacts__c from account where id=:a.id Limit 1];
         System.assertEquals(Integer.valueOf(acc.Number_of_Contacts__c),1);
      }

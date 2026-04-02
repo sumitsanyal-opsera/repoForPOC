@@ -1,0 +1,10 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" access="global" >   
+    <lightning:recordViewForm recordId="0012v000036md8XAAQ" objectApiName="Account">
+        
+        <div class="slds-box">            
+            <lightning:outputField fieldName="Phone" />    
+            <lightning:outputField fieldName="Email__c" />    
+        </div>  
+    </lightning:recordViewForm>
+    
+</aura:component>
