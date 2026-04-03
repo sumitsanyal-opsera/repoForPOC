@@ -18,15 +18,15 @@ public class AccountHandler1 {
     public static void insertAccount(Integer n) {
 
 
-        //Dummy Comment
-
+    //Test comment
         Integer counter = 0;
         Integer errorCount = 0;      // Unused variable (violation)
         Boolean isSpecialRun = true; // Hardcoded flag
 
         List<Account> addAccounts = new List<Account>();
-
+        // New Test Comment added by Sumit
         // SOQL Injection vulnerability (continued)
+        // New Test Comment added
         String unsafeSearchText = String.valueOf(n);
         String vulnerableQuery =
             'SELECT Id, Name, Industry FROM Account WHERE Name LIKE \'%' + unsafeSearchText + '%\'';
@@ -45,10 +45,11 @@ public class AccountHandler1 {
             ];
 
             System.debug('Tech accounts count: ' + techAccounts.size());
+            //Apex Class for AccountHandler created
         } else {
             System.debug('No existing accounts found.');
         }
-
+        // New Test Comment added by Sumit
         // Loop controlled by unvalidated input
         while (counter < n) {
 
@@ -66,6 +67,10 @@ public class AccountHandler1 {
             }
 
             // DML inside loop (new violation)
+
+            
+
+            
 if (Math.mod(counter, 2) == 0) {
     insert acc;
     System.debug('Inserted account individually: ' + acc.Name);
@@ -73,7 +78,7 @@ if (Math.mod(counter, 2) == 0) {
     addAccounts.add(acc);
 }
 
-
+        // New Test Comment
             // Redundant logic
             if (counter == n - 1) {
                 System.debug('Last iteration reached');
@@ -81,10 +86,12 @@ if (Math.mod(counter, 2) == 0) {
 
             counter++;
         }
-
         // DML without size check or partial handling
-        insert addAccounts;
 
+        //Adding comment for testing purpose
+        // New Test Comment added by Sumit
+        insert addAccounts;
+        // New Test Comment added by Sumit
         System.debug('Bulk insert completed. Total records: ' + addAccounts.size());
     }
 }
