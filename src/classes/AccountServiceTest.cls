@@ -26,5 +26,6 @@ public class AccountServiceTest {
         Test.stopTest();
 
         System.assert(accList.size() > 0);
+// Dummy comment
     }
 }
