@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <recordTypes>
+        <description><!-- For customers and prospects --></description>
+        <label><!-- Customer Account --></label>
+        <name>Customer_Account</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- For consulting partners --></description>
+        <label><!-- Partner Account --></label>
+        <name>Partner_Account</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- Account number must be 8 characters long. --></errorMessage>
+        <name>Account_Number_8_Characters</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Billing --></label>
+        <name>Billing</name>
+    </webLinks>
+</CustomObjectTranslation>
