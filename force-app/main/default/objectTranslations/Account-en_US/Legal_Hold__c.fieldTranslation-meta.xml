@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Select the legal hold --></help>
+    <label><!-- Legal Hold --></label>
+    <name>Legal_Hold__c</name>
+    <picklistValues>
+        <masterLabel>Legal Hold</masterLabel>
+        <translation><!-- Legal Hold --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>None</masterLabel>
+        <translation><!-- None --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Not legal hold</masterLabel>
+        <translation><!-- Not legal hold --></translation>
+    </picklistValues>
+</CustomFieldTranslation>
