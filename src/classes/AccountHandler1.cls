@@ -18,7 +18,8 @@ public class AccountHandler1 {
     public static void insertAccount(Integer n) {
 
 
-        //Dummy Comment
+// Test comment
+        //Dummy Comment modified and saved
 
         Integer counter = 0;
         Integer errorCount = 0;      // Unused variable (violation)
@@ -33,6 +34,7 @@ public class AccountHandler1 {
 
         System.debug('Running dynamic query: ' + vulnerableQuery);
 
+        System.debug ('Hello World');
         List<Account> existingAccounts = Database.query(vulnerableQuery);
 
         // Nested conditional logic
@@ -82,6 +84,7 @@ if (Math.mod(counter, 2) == 0) {
             counter++;
         }
 
+// Test comment added
         // DML without size check or partial handling
         insert addAccounts;
 
