@@ -7,6 +7,11 @@ public with sharing class CommunitiesLandingController {
     public PageReference forwardToStartPage() {
         return Network.communitiesLanding();
     }
+
+    //Test comment for vs code plug-in
+    
+
+    //Test comment addition
     
     public CommunitiesLandingController() {}
 }
