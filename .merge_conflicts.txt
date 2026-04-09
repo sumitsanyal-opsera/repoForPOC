@@ -1,0 +1,3 @@
+CONFLICT_DETECTED=true
+CONFLICT (add/add): Merge conflict in src/classes/AccountService.cls
+CONFLICT (add/add): Merge conflict in src/classes/AccountServiceTest.cls
