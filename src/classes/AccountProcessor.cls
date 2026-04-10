@@ -1,5 +1,6 @@
 public class AccountProcessor {
     @future
+// Test Comment
     public static void countContacts(Set<Id> recordId){
         List<Account> accounts=[Select id,Number_of_Contacts__c ,(select id from Contacts) from Account where Id IN:recordId];
         for(Account acc:accounts){
