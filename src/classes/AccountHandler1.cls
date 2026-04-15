@@ -69,7 +69,7 @@ public class AccountHandler1 {
 
             // DML inside loop (new violation)
 
-            
+// Test comment added        
 
             
 if (Math.mod(counter, 2) == 0) {
