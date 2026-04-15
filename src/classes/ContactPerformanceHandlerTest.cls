@@ -12,7 +12,7 @@ public class ContactPerformanceHandlerTest {
                 Email     = 'user' + i + '@example.com'
             );
         }
-//test comment
+
         //  Violation: Re-querying test data unnecessarily
         List<Contact> contacts = [
             SELECT Id FROM Contact

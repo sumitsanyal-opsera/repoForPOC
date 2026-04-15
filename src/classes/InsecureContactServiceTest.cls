@@ -16,7 +16,7 @@ public class InsecureContactServiceTest {
 
         insert contacts;
     }
-//test comment
+
     @IsTest
     static void testFetchAndUpdateContacts() {
 
