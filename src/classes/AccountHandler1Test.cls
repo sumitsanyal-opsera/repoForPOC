@@ -42,7 +42,7 @@ public class AccountHandler1Test {
 
 // Test comment added
 // Dummy test comment added
-// test comment
+// test
         System.assertEquals(
             0,
             accs.size(),
