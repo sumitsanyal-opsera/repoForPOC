@@ -8,6 +8,7 @@ public class AppleWatchTest {
         opp.StageName ='Prospecting';
         opp.CloseDate =Date.today();  
         opp.Discount_Percent__c=90;
+        // Test comment
         insert opp;
     }
     
