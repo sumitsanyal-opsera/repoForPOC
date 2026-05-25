@@ -1,0 +1,19 @@
+{
+  "packageDirectories": [
+    {
+      "path": "src",
+      "default": true,
+      "package": "SFTest",
+      "versionName": "ver 1.0",
+      "versionNumber": "1.0.0.NEXT"
+    }
+  ],
+  "namespace": "",
+  "sfdcLoginUrl": "https://login.salesforce.com",
+  "sourceApiVersion": "65.0",
+  "plugins": {
+    "lightning": {
+      "strictSSLCertificates": true
+    }
+  }
+}

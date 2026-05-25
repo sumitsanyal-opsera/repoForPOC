@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="SFTest Apex Ruleset"
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0
+                             http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
+    <description>
+        PMD static-analysis ruleset for the SFTest Salesforce Apex codebase.
+        Run with: sf scanner run --target src/classes --ruleset ruleset/apex-ruleset.xml
+    </description>
+
+    <!-- =====================================================================
+         Security rules — Critical
+         ===================================================================== -->
+    <rule ref="category/apex/security.xml/ApexSharingViolations">
+        <priority>1</priority>
+    </rule>
+    <rule ref="category/apex/security.xml/ApexSOQLInjection">
+        <priority>1</priority>
+    </rule>
+    <rule ref="category/apex/security.xml/ApexCRUDViolation">
+        <priority>1</priority>
+    </rule>
+    <rule ref="category/apex/security.xml/ApexDangerousMethods">
+        <priority>1</priority>
+    </rule>
+    <rule ref="category/apex/security.xml/ApexSuggestUsingNamedCred">
+        <priority>2</priority>
+    </rule>
+
+    <!-- =====================================================================
+         Performance rules — High
+         ===================================================================== -->
+    <rule ref="category/apex/performance.xml/AvoidSoqlInLoops">
+        <priority>2</priority>
+    </rule>
+    <rule ref="category/apex/performance.xml/AvoidDmlStatementsInLoops">
+        <priority>2</priority>
+    </rule>
+    <rule ref="category/apex/performance.xml/OperationWithLimitsInLoop">
+        <priority>2</priority>
+    </rule>
+
+    <!-- =====================================================================
+         Best practices — Medium
+         ===================================================================== -->
+    <rule ref="category/apex/bestpractices.xml/ApexUnitTestClassShouldHaveAsserts">
+        <priority>3</priority>
+    </rule>
+    <rule ref="category/apex/bestpractices.xml/ApexUnitTestShouldNotUseSeeAllDataTrue">
+        <priority>3</priority>
+    </rule>
+    <rule ref="category/apex/bestpractices.xml/AvoidGlobalModifier">
+        <priority>3</priority>
+    </rule>
+    <rule ref="category/apex/bestpractices.xml/DebugsShouldUseLoggingLevel">
+        <priority>3</priority>
+    </rule>
+
+    <!-- =====================================================================
+         Code style — Low
+         ===================================================================== -->
+    <rule ref="category/apex/codestyle.xml/ClassNamingConventions">
+        <priority>4</priority>
+    </rule>
+    <rule ref="category/apex/codestyle.xml/MethodNamingConventions">
+        <priority>4</priority>
+    </rule>
+    <rule ref="category/apex/errorprone.xml/AvoidHardcodingId">
+        <priority>3</priority>
+    </rule>
+</ruleset>
