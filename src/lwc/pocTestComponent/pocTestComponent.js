@@ -1,8 +1,8 @@
-import { LightningElement, track } from 'lwc';
+import { LightningElement } from 'lwc';
 
 export default class PocTestComponent extends LightningElement {
-    @track name = '';
-    @track showMessage = false;
+    name = '';
+    showMessage = false;
 
     handleChange(event) {
         this.name = event.target.value;
