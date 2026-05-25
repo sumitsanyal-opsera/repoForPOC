@@ -1,18 +1,33 @@
 /**
- * An apex page controller that takes the user to the right start page based on credentials or lack thereof
+ * Test class for CommunitiesLandingController (WO-032).
+ *
+ * Validates:
+ *  - forwardToStartPage returns a PageReference or null without throwing
+ *  - Controller can be instantiated
  */
-@IsTest public with sharing class CommunitiesLandingControllerTest {
-    @IsTest(SeeAllData=true) public static void testCommunitiesLandingController() {
-        // Instantiate a new controller with all parameters in the page
+@IsTest
+public with sharing class CommunitiesLandingControllerTest {
+
+    @IsTest(SeeAllData=true)
+    public static void testForwardToStartPage_DoesNotThrow() {
         CommunitiesLandingController controller = new CommunitiesLandingController();
+        Test.startTest();
         PageReference pageRef = controller.forwardToStartPage();
-        //PageRef is either null or an empty object in test context
-        if(pageRef != null){
+        Test.stopTest();
+
+        // In test context Network.communitiesLanding() returns null or empty
+        if (pageRef != null) {
             String url = pageRef.getUrl();
-            if(url != null){
-                System.assertEquals(true, String.isEmpty(url));
-                //show up in perforce
-            }
+            System.assert(url == null || String.isEmpty(url),
+                'PageReference URL should be null or empty in test context');
+        } else {
+            System.assert(true, 'Null PageReference is acceptable in test context');
         }
+    }
+
+    @IsTest
+    static void testControllerInstantiation() {
+        CommunitiesLandingController controller = new CommunitiesLandingController();
+        System.assertNotEquals(null, controller, 'Controller should be instantiated successfully');
     }
 }
