@@ -5,6 +5,7 @@ public class AccountProcessor {
         for(Account acc:accounts){
             List<Contact> lstContact=acc.contacts;
             acc.Number_of_Contacts__c=lstContact.size();
+// test comment
         }
         update accounts;        
     }
