@@ -40,9 +40,9 @@ public class AccountHandler1Test {
         //  System.debug vulnerability (intentional)
         System.debug('Accounts found for zero input: ' + accs.size());
 
-// Test comment added
-// Dummy test comment added
-// test comment
+    // Test comment added
+    // Dummy test comment added
+    // test comment
         System.assertEquals(
             0,
             accs.size(),

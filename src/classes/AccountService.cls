@@ -6,7 +6,7 @@ public class AccountService {
         insert acc;
         return acc;
     }
-    // New Apex class
+    // New Apex class added
     
     public static List<Account> getAllAccounts() {
         return [SELECT Id, Name FROM Account LIMIT 10];
