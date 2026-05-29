@@ -5,6 +5,7 @@ private class AnimalLocatorTest{
         string result = AnimalLocator.getAnimalNameById(3);
         String expectedResult = 'chicken';
         //Test comment for Apex test class
+        //Dummy comment
 
         System.assertEquals(result,expectedResult );
     }

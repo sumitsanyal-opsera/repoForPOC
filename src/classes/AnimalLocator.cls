@@ -8,6 +8,7 @@ public class AnimalLocator{
         HttpResponse res = http.send(req);
 
         //Test comment
+        // Dummy comment
         
         if (res.getStatusCode() == 200) {
             Map<String, Object> results = (Map<String, Object>)JSON.deserializeUntyped(res.getBody());
