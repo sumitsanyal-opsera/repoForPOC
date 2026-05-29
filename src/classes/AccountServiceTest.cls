@@ -12,7 +12,8 @@ public class AccountServiceTest {
         System.assertEquals('Test Account', acc.Name);
     }
     
-    // Added Test comment
+    // Added Test comments
+    // test comment
 
     @isTest
     static void testGetAllAccounts() {
