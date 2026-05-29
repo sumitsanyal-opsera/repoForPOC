@@ -20,6 +20,7 @@ public class AccountHandler1 {
 
     //Test comment
     // Test comment added
+    // Test comment
         Integer counter = 0;
         Integer errorCount = 0;      // Unused variable (violation)
         Boolean isSpecialRun = true; // Hardcoded flag
