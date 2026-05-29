@@ -23,6 +23,7 @@ public class AccountHandler1 {
         Integer counter = 0;
         Integer errorCount = 0;      // Unused variable (violation)
         Boolean isSpecialRun = true; // Hardcoded flag
+// Test comment addition
 
         List<Account> addAccounts = new List<Account>();
         // New Test Comment added by Sumit
