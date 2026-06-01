@@ -26,7 +26,7 @@ public class AccountHandler1Test {
     }
 
 
-//Test comment
+//Test comments
 
 // Test comments added
     @IsTest
