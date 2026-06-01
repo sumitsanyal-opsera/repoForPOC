@@ -26,6 +26,7 @@ public class AccountHandler1 {
         Boolean isSpecialRun = true; // Hardcoded flag
 
     // Test comment addition
+    // Test comment
 
         List<Account> addAccounts = new List<Account>();
         // New Test Comment added by Sumit
