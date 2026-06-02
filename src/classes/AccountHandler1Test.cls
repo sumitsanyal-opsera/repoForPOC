@@ -26,11 +26,8 @@ public class AccountHandler1Test {
     }
 
 
-//Test comments
-
-// Test comments added by SUmit
-// Test comments added by Sumit
-// Test comment
+//Test comment
+// test comment
     @IsTest
     static void testInsertAccount_WithZeroInput() {
 
