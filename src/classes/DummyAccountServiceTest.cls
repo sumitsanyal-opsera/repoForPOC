@@ -11,6 +11,7 @@ public class DummyAccountServiceTest {
     }
 
     @IsTest
+    // Test comment
     static void testCreateDummyAccounts() {
         System.Test.startTest();
         List<Account> createdAccounts = DummyAccountService.createDummyAccounts(2);
