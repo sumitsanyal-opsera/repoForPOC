@@ -6,7 +6,7 @@ public class AccountProcessor {
             List<Contact> lstContact=acc.contacts;
             acc.Number_of_Contacts__c=lstContact.size();
 
-            //Test comment
+            //Test comments updated
         }
         update accounts;        
     }
