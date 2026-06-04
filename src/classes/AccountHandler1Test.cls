@@ -16,7 +16,7 @@ public class AccountHandler1Test {
         //  System.debug vulnerability (intentional)
         System.debug('Number of accounts created: ' + accs.size());
 
-        // Adding Test comment in the class
+        // Adding comment in the test classes
         // Test comment
         // test comment
         System.assert(
