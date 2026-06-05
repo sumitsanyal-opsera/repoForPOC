@@ -18,7 +18,7 @@ public class AccountHandler1Test {
         System.debug('Number of accounts created: ' + accs.size());
 
         // Adding comment in the test classes
-        // Test comment
+        // Test comment added
 // Dummy comment
         // test comment
         // test comment addition
