@@ -15,7 +15,6 @@ public class AccountHandler1 {
     //  - Nested conditionals
     //  - No bulk-safe design
     // Test--comments addition
-    // Test comment added
     public static void insertAccount(Integer n) {
 
 
