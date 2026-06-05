@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Type__c</fullName>
+    <inlineHelpText>Select the Product Type</inlineHelpText>
+    <label>Product Type</label>
+    <required>true</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Antipyretics</fullName>
+                <default>false</default>
+                <label>Antipyretics</label>
+            </value>
+            <value>
+                <fullName>Analgesics</fullName>
+                <default>false</default>
+                <label>Analgesics</label>
+            </value>
+            <value>
+                <fullName>Antimalarial drugs</fullName>
+                <default>false</default>
+                <label>Antimalarial drugs</label>
+            </value>
+            <value>
+                <fullName>Antibiotics</fullName>
+                <default>false</default>
+                <label>Antibiotics</label>
+            </value>
+            <value>
+                <fullName>Antiseptics</fullName>
+                <default>false</default>
+                <label>Antiseptics</label>
+            </value>
+            <value>
+                <fullName>Mood stabilizers</fullName>
+                <default>false</default>
+                <label>Mood stabilizers</label>
+            </value>
+            <value>
+                <fullName>Hormone replacements</fullName>
+                <default>false</default>
+                <label>Hormone replacements</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
