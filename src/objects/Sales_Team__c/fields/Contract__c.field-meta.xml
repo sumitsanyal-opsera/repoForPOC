@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract__c</fullName>
+    <inlineHelpText>Select the type of Contract to be signed</inlineHelpText>
+    <label>Contract</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Cost Plus Contracts</fullName>
+                <default>false</default>
+                <label>Cost Plus Contracts</label>
+            </value>
+            <value>
+                <fullName>Time and Material Contracts</fullName>
+                <default>false</default>
+                <label>Time and Material Contracts</label>
+            </value>
+            <value>
+                <fullName>Unit Pricing Contracts</fullName>
+                <default>false</default>
+                <label>Unit Pricing Contracts</label>
+            </value>
+            <value>
+                <fullName>Bilateral Contract</fullName>
+                <default>false</default>
+                <label>Bilateral Contract</label>
+            </value>
+            <value>
+                <fullName>Unilateral Contract</fullName>
+                <default>false</default>
+                <label>Unilateral Contract</label>
+            </value>
+            <value>
+                <fullName>Implied Contracts</fullName>
+                <default>false</default>
+                <label>Implied Contracts</label>
+            </value>
+            <value>
+                <fullName>Express Contracts</fullName>
+                <default>false</default>
+                <label>Express Contracts</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
