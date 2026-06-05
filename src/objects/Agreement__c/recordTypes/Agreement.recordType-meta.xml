@@ -3,4 +3,106 @@
     <fullName>Agreement</fullName>
     <active>true</active>
     <label>Agreement</label>
+    <picklistValues>
+        <picklist>Agreement_Dependency__c</picklist>
+        <values>
+            <fullName>Engineering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Support</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Agreement_Picklist__c</picklist>
+        <values>
+            <fullName>Amazon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dummy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Good Will %2F Paramount-Pictures</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Google</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Microsoft</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oracle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Salesforce</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Test - Data</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Test - Dummy%2F Test Value</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Test 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Test 3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Test 4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Test 5</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Test 6</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Test 7</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Test%C2%A0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Test-Value</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Viacom-Pictures</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yahoo_%21</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
 </RecordType>

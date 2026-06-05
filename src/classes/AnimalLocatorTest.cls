@@ -4,9 +4,6 @@ private class AnimalLocatorTest{
         System.Test.setMock(HttpCalloutMock.class, new AnimalLocatorMock());
         string result = AnimalLocator.getAnimalNameById(3);
         String expectedResult = 'chicken';
-        //Test comment for Apex test class
-        //Dummy comment
-
         System.assertEquals(result,expectedResult );
     }
 }

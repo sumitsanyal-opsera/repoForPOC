@@ -22,7 +22,6 @@ public class ContactPerformanceHandler {
             Map<String, Schema.SObjectType> globalMap = Schema.getGlobalDescribe();
 
             //  Violation: Unselective SOQL inside loop
-            // Test comment added
             List<Contact> contacts = [
                 SELECT Id, FirstName, LastName, Email, Description
                 FROM Contact

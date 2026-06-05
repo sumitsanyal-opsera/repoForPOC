@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AnimationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <animationFrequency>often</animationFrequency>
+    <developerName>Account_Support_Request_Path</developerName>
+    <isActive>false</isActive>
+    <masterLabel>Account Support Request Path</masterLabel>
+    <recordTypeContext>Custom</recordTypeContext>
+    <recordTypeName>Customer_Account</recordTypeName>
+    <sobjectType>Account</sobjectType>
+    <targetField>AccountSource</targetField>
+    <targetFieldChangeToValues>Web,Phone Inquiry,Partner Referral,Purchased List,Other</targetFieldChangeToValues>
+</AnimationRule>

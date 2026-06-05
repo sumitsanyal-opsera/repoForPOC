@@ -4,8 +4,6 @@ global class AnimalLocatorHTTPCalloutMock implements HttpCalloutMock {
     global HTTPResponse respond(HTTPRequest request) {
         // Create a fake response
         HttpResponse response = new HttpResponse();
-        // Test comment
-        // Test Comment
         response.setHeader('Content-Type', 'application/json');
         response.setBody('{"animal":{"id":1,"name":"chicken","eats":"chicken food","says":"cluck cluck"}}');
         response.setStatusCode(200);
