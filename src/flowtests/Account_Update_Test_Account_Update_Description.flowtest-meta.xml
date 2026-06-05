@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowTest xmlns="http://soap.sforce.com/2006/04/metadata">
+    <flowApiName>Account_Update</flowApiName>
+    <label>Test Account Update Description</label>
+    <testPoints>
+        <elementApiName>Start</elementApiName>
+        <isUseMockOutput>false</isUseMockOutput>
+        <parameters>
+            <leftValueReference>$Record</leftValueReference>
+            <type>InputTriggeringRecordInitial</type>
+            <value>
+                <sobjectValue>{&quot;Has_Support_Plan__c&quot;:false,&quot;Legal_Hold__c&quot;:&quot;Legal Hold&quot;,&quot;Match_Billing_Address__c&quot;:false,&quot;Name&quot;:&quot;Account with Flow&quot;,&quot;OwnerId&quot;:&quot;0052v00000d2piKAAQ&quot;,&quot;isTeam__c&quot;:false}</sobjectValue>
+            </value>
+        </parameters>
+    </testPoints>
+    <testPoints>
+        <assertions>
+            <conditions>
+                <leftValueReference>$Record.Description</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+        </assertions>
+        <elementApiName>Finish</elementApiName>
+        <isUseMockOutput>false</isUseMockOutput>
+    </testPoints>
+    <testType>WithAssertion</testType>
+</FlowTest>
