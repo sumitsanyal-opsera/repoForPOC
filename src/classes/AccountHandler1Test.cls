@@ -2,7 +2,7 @@
 public class AccountHandler1Test {
 
     @IsTest
-// Test comment
+    // Test comment
     static void testInsertAccount_WithValidInput() {
 
         System.Test.startTest();
@@ -17,12 +17,7 @@ public class AccountHandler1Test {
         //  System.debug vulnerability (intentional)
         System.debug('Number of accounts created: ' + accs.size());
 
-        // Adding comment in the test classes
-        // Test comment added
-// Dummy comment
-        // test comment
-        // test comment addition
-// test comment added
+        // Adding Test comment in the class
         System.assert(
             accs.size() > 0,
             'Accounts should be created when a positive number is passed'
@@ -31,7 +26,6 @@ public class AccountHandler1Test {
 
 
 //Test comment
-// test comment
     @IsTest
     static void testInsertAccount_WithZeroInput() {
 
@@ -47,9 +41,8 @@ public class AccountHandler1Test {
         //  System.debug vulnerability (intentional)
         System.debug('Accounts found for zero input: ' + accs.size());
 
-    // Test comment added
-    // Dummy test comment added
-    // test comment
+// Test comment added
+// Dummy test comment added
         System.assertEquals(
             0,
             accs.size(),
