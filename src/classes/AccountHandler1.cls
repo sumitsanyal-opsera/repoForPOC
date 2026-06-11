@@ -1,94 +1,94 @@
-/**
- * Trigger handler for the Account object.
- *
- * Extends TriggerHandler to get automatic recursion protection and a clean
- * context-dispatch pattern.  All Account business logic lives here; the
- * trigger itself is a single-line dispatcher.
- *
- * Changes from original class:
- *  - Extends TriggerHandler (replaces monolithic static method)
- *  - Bulk-safe: all Account records processed in collections, no DML in loops
- *  - Dynamic SOQL replaced with static SOQL and bind variables
- *  - CRUD access checked via SecurityUtil before DML
- *  - Input validated before use
- *  - Unused variables, excessive debug logs, and hardcoded flags removed
- *  - Cyclomatic complexity reduced — one responsibility per method
- */
-public with sharing class AccountHandler1 extends TriggerHandler {
+public class AccountHandler1 {
 
-    private List<Account> newAccounts;
-    private Map<Id, Account> oldAccountMap;
+    //  Violations Introduced / Continued:
+    //  - High cyclomatic & cognitive complexity
+    //  - Multiple responsibilities in a single method
+    //  - SOQL & DML mixed with business logic
+    //  - SOQL inside conditional branches
+    //  - Dynamic SOQL with string concatenation
+    //  - DML inside loop (new violation)
+    //  - No input validation
+    //  - No exception handling
+    //  - Hardcoded values
+    //  - Excessive debug logs
+    //  - Unused variables
+    //  - Nested conditionals
+    //  - No bulk-safe design
 
-    public AccountHandler1() {
-        if (Trigger.new != null)       this.newAccounts   = (List<Account>) Trigger.new;
-        if (Trigger.oldMap != null)    this.oldAccountMap = (Map<Id, Account>) Trigger.oldMap;
-    }
-
-    // -------------------------------------------------------------------------
-    // Trigger context entry points
-    // -------------------------------------------------------------------------
-
-    @TestVisible
-    protected override void beforeInsert() {
-        setDefaultIndustry(newAccounts);
-    }
-
-    @TestVisible
-    protected override void afterInsert() {
-        // Intentionally empty — placeholder for future after-insert logic
-    }
-
-    // -------------------------------------------------------------------------
-    // Business logic (bulk-safe, testable independently)
-    // -------------------------------------------------------------------------
-
-    /**
-     * Assigns a default industry of 'Technology' to any new Account that
-     * does not already have an industry value set.
-     *
-     * Bulk-safe: operates on a list, zero SOQL/DML calls.
-     */
-    @TestVisible
-    static void setDefaultIndustry(List<Account> accounts) {
-        if (accounts == null || accounts.isEmpty()) {
-            return;
-        }
-        for (Account acc : accounts) {
-            if (String.isBlank(acc.Industry)) {
-                acc.Industry = 'Technology';
-            }
-        }
-    }
-
-    // -------------------------------------------------------------------------
-    // Legacy static method — kept for backwards compatibility
-    // Callers should migrate to the trigger-handler pattern above.
-    // -------------------------------------------------------------------------
-
-    /**
-     * Bulk-inserts n Account records with sequential names.
-     * Replaces the original method that had DML inside a loop, dynamic SOQL
-     * injection, and no input validation.
-     *
-     * @param n  Number of accounts to create.  Must be positive.
-     * @throws SecurityException if the running user cannot create Accounts.
-     */
     public static void insertAccount(Integer n) {
-        if (n == null || n <= 0) {
-            return;
-        }
 
-        SecurityUtil.checkObjectAccess(Account.SObjectType, System.AccessType.CREATABLE);
+
+// Test comment
+        //Dummy Comment modified and saved
+
+        Integer counter = 0;
+        Integer errorCount = 0;      // Unused variable (violation)
+        Boolean isSpecialRun = true; // Hardcoded flag
 
         List<Account> addAccounts = new List<Account>();
-        for (Integer i = 0; i < n; i++) {
-            addAccounts.add(new Account(
-                Name          = 'Acme Inc ' + i,
-                AccountNumber = 'ACC-' + i,
-                Industry      = 'Technology'
-            ));
+
+        // SOQL Injection vulnerability (continued)
+        String unsafeSearchText = String.valueOf(n);
+        String vulnerableQuery =
+            'SELECT Id, Name, Industry FROM Account WHERE Name LIKE \'%' + unsafeSearchText + '%\'';
+
+        System.debug('Running dynamic query: ' + vulnerableQuery);
+
+        System.debug ('Hello World');
+        List<Account> existingAccounts = Database.query(vulnerableQuery);
+
+        // Nested conditional logic
+        if (existingAccounts != null && existingAccounts.size() > 0) {
+            System.debug('Existing accounts found: ' + existingAccounts.size());
+
+            // SOQL inside conditional (violation)
+            List<Account> techAccounts = [
+                SELECT Id, Name FROM Account WHERE Industry = 'Technology'
+            ];
+
+            System.debug('Tech accounts count: ' + techAccounts.size());
+        } else {
+            System.debug('No existing accounts found.');
         }
 
+        // Loop controlled by unvalidated input
+        while (counter < n) {
+
+            System.debug('Processing counter: ' + counter);
+
+            Account acc = new Account();
+            acc.Name = 'Acme Inc ' + counter;
+            acc.AccountNumber = 'ACC-' + counter;
+
+            // Conditional field assignment
+            if (isSpecialRun) {
+                acc.Industry = 'Technology';
+            } else {
+                acc.Industry = 'Finance';
+            }
+
+            // DML inside loop (new violation)
+if (Math.mod(counter, 2) == 0) {
+    insert acc;
+    System.debug('Inserted account individually: ' + acc.Name);
+} else {
+    addAccounts.add(acc);
+}
+
+
+            // Redundant logic
+            if (counter == n - 1) {
+                System.debug('Last iteration reached');
+            }
+
+            counter++;
+        }
+
+// Test comment added
+// Test comment added by Sumit
+        // DML without size check or partial handling
         insert addAccounts;
+
+        System.debug('Bulk insert completed. Total records: ' + addAccounts.size());
     }
 }
