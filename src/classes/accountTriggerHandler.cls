@@ -20,10 +20,7 @@ public class accountTriggerHandler {
                 System.debug('#updating');
                 update ContactsinCOnsideration;
             }
-        }     
-        
-        //Test comment added in the Apex class
-        
+        }       
         System.debug('#END');
     }    
 }
