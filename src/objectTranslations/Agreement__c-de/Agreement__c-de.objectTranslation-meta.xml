@@ -3,44 +3,43 @@
     <caseValues>
         <caseType>Nominative</caseType>
         <plural>false</plural>
-        <value><!-- Agreement_Customer --></value>
+        <value/>
     </caseValues>
     <caseValues>
         <caseType>Nominative</caseType>
         <plural>true</plural>
-        <value><!-- Agreement_Customer --></value>
+        <value/>
     </caseValues>
     <caseValues>
         <caseType>Accusative</caseType>
         <plural>false</plural>
-        <value><!-- Agreement_Customer --></value>
+        <value/>
     </caseValues>
     <caseValues>
         <caseType>Accusative</caseType>
         <plural>true</plural>
-        <value><!-- Agreement_Customer --></value>
+        <value/>
     </caseValues>
     <caseValues>
         <caseType>Genitive</caseType>
         <plural>false</plural>
-        <value><!-- Agreement_Customer --></value>
+        <value/>
     </caseValues>
     <caseValues>
         <caseType>Genitive</caseType>
         <plural>true</plural>
-        <value><!-- Agreement_Customer --></value>
+        <value/>
     </caseValues>
     <caseValues>
         <caseType>Dative</caseType>
         <plural>false</plural>
-        <value><!-- Agreement_Customer --></value>
+        <value/>
     </caseValues>
     <caseValues>
         <caseType>Dative</caseType>
         <plural>true</plural>
-        <value><!-- Agreement_Customer --></value>
+        <value/>
     </caseValues>
-    <gender><!-- Neuter --></gender>
     <layouts>
         <layout>Agreement Layout</layout>
         <sections>
@@ -49,19 +48,33 @@
         </sections>
     </layouts>
     <layouts>
-        <layout>Test Agreement Layout</layout>
+        <layout>EMEA-Agreement- % Layout</layout>
         <sections>
-            <label><!-- Custom Links --></label>
+            <label/>
             <section>Custom Links</section>
         </sections>
         <sections>
-            <label><!-- Fields --></label>
+            <label/>
+            <section>EMEA-Layout</section>
+        </sections>
+        <sections>
+            <label/>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Test Agreement Layout</layout>
+        <sections>
+            <label/>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label/>
             <section>Fields</section>
         </sections>
         <sections>
-            <label><!-- Test Section --></label>
+            <label/>
             <section>Test Section</section>
         </sections>
     </layouts>
-    <nameFieldLabel><!-- Agreement Name --></nameFieldLabel>
 </CustomObjectTranslation>

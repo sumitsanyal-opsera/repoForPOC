@@ -11,22 +11,37 @@
     <layouts>
         <layout>Agreement Layout</layout>
         <sections>
-            <label><!-- Custom Links --></label>
+            <label/>
             <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>EMEA-Agreement- % Layout</layout>
+        <sections>
+            <label/>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label/>
+            <section>EMEA-Layout</section>
+        </sections>
+        <sections>
+            <label/>
+            <section>Fields</section>
         </sections>
     </layouts>
     <layouts>
         <layout>Test Agreement Layout</layout>
         <sections>
-            <label><!-- Custom Links --></label>
+            <label/>
             <section>Custom Links</section>
         </sections>
         <sections>
-            <label><!-- Fields --></label>
+            <label/>
             <section>Fields</section>
         </sections>
         <sections>
-            <label><!-- Test Section --></label>
+            <label/>
             <section>Test Section</section>
         </sections>
     </layouts>
