@@ -51,7 +51,7 @@ public class AccountHandler1 {
             System.debug('No existing accounts found.');
         }
 
-        // Loop controlled by unvalidated input
+        // Loop controlled by unvalidated input from developer
         while (counter < n) {
 
             System.debug('Processing counter: ' + counter);
