@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+  <types>
+    <members>SimpleCalculator</members>
+    <members>SimpleCalculatorTest</members>
+    <name>ApexClass</name>
+  </types>
+  <types>
+    <members>Agreement__c.Contact_Number__c</members>
+    <members>Agreement__c.TotalValues__c</members>
+    <members>Agreement__c.Type__c</members>
+    <name>CustomField</name>
+  </types>
+  <types>
+    <members>AcquiredAccount__c-en_US</members>
+    <name>CustomObjectTranslation</name>
+  </types>
+  <types>
+    <members>Opps_by_stage_and_lead_source</members>
+    <members>Dashboard_XMD_Test</members>
+    <name>WaveDashboard</name>
+  </types>
+  <types>
+    <members>Dashboard_XMD_Test</members>
+    <members>Opps_by_stage_and_lead_source</members>
+    <name>WaveXmd</name>
+  </types>
+<version>67.0</version></Package>

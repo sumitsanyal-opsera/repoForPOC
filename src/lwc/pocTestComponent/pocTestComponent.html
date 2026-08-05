@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="POC Test LWC" icon-name="custom:custom63">
+        <div class="slds-p-around_medium">
+            <lightning-input
+                label="Enter Name"
+                value={name}
+                onchange={handleChange}>
+            </lightning-input>
+
+            <lightning-button
+                label="Submit"
+                variant="brand"
+                class="slds-m-top_medium"
+                onclick={handleClick}>
+            </lightning-button>
+
+            <template if:true={showMessage}>
+                <p class="slds-m-top_medium slds-text-heading_small">
+                    Hello, {name} 👋
+                </p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

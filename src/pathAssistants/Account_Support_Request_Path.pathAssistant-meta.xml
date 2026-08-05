@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Account</entityName>
+    <fieldName>AccountSource</fieldName>
+    <masterLabel>Account Support Request Path</masterLabel>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;Add Text for testing&lt;/p&gt;</info>
+        <picklistValueName>Phone Inquiry</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Name</fieldNames>
+        <fieldNames>OwnerId</fieldNames>
+        <info>&lt;p&gt;Add dummy text&lt;/p&gt;</info>
+        <picklistValueName>Web</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>Customer_Account</recordTypeName>
+</PathAssistant>
