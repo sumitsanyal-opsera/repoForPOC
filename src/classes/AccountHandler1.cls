@@ -78,6 +78,7 @@ if (Math.mod(counter, 2) == 0) {
 
 
             // Redundant logic
+            // Test comment added
             if (counter == n - 1) {
                 System.debug('Last iteration reached');
             }
