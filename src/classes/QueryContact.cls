@@ -10,7 +10,7 @@ public class QueryContact {
     }
   }
 
-  //Test comment
+  //Test comments added
   public static Id getContactIDWithBinds(Map<String, Object> bindVars) {
     String query = 'SELECT ID FROM Contact WHERE LastName = :lastName AND Title = :title LIMIT 1';
     List<Contact> contacts = Database.queryWithBinds(query, bindVars, AccessLevel.USER_MODE);
