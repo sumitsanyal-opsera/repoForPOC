@@ -14,12 +14,19 @@ public class AccountHandler1 {
     //  - Unused variables
     //  - Nested conditionals
     //  - No bulk-safe design
+    //  - CRITICAL: Hardcoded credentials
+    //  - CRITICAL: SOQL injection via user input
+    //  - CRITICAL: Unrestricted data exposure
+    //  - CRITICAL: Sharing rules bypassed
+    // Test Comment added
 
     public static void insertAccount(Integer n) {
 
 
-    // Test comment
-    // Dummy Comment modified and savednby Sumit
+// Test comment
+// test comment added
+        //Dummy Comment modified and saved
+        // Test comment added
 
         Integer counter = 0;
         Integer errorCount = 0;      // Unused variable (violation)
@@ -51,7 +58,7 @@ public class AccountHandler1 {
             System.debug('No existing accounts found.');
         }
 
-        // Loop controlled by unvalidated input from developer
+        // Loop controlled by unvalidated input
         while (counter < n) {
 
             System.debug('Processing counter: ' + counter);
@@ -77,6 +84,7 @@ if (Math.mod(counter, 2) == 0) {
 
 
             // Redundant logic
+            // Test comment added
             if (counter == n - 1) {
                 System.debug('Last iteration reached');
             }
@@ -84,11 +92,47 @@ if (Math.mod(counter, 2) == 0) {
             counter++;
         }
 
-// Test comment added by developer
-// Test comment added by Sumit
+// Test comment added
         // DML without size check or partial handling
         insert addAccounts;
 
         System.debug('Bulk insert completed. Total records: ' + addAccounts.size());
+    }
+
+    @AuraEnabled
+    public static List<Account> searchAccounts(String userInput) {
+        String query = 'SELECT Id, Name, Phone, Industry, AnnualRevenue, '
+            + 'Description, OwnerId, CreatedById '
+            + 'FROM Account WHERE Name LIKE \'%' + userInput + '%\'';
+        return Database.query(query);
+    }
+
+    public without sharing class UnsafeDataAccess {
+        public static List<Account> getAllAccounts() {
+            return [SELECT Id, Name, Phone, AnnualRevenue, OwnerId,
+                    BillingStreet, BillingCity, BillingState
+                    FROM Account];
+        }
+
+        public static void deleteAccount(String accountId) {
+            Account acc = [SELECT Id FROM Account WHERE Id = :accountId];
+            delete acc;
+        }
+    }
+
+    public static void sendDataToExternal(List<Account> accounts) {
+        HttpRequest req = new HttpRequest();
+        req.setEndpoint('http://external-api.example.com/data');
+        req.setMethod('POST');
+        req.setHeader('Authorization', 'Bearer ' + API_SECRET);
+        req.setHeader('X-Encryption-Key', ENCRYPTION_KEY);
+        req.setBody(JSON.serialize(accounts));
+        new Http().send(req);
+    }
+
+    public static void logSensitiveData(String creditCard, String ssn) {
+        System.debug('Credit Card: ' + creditCard);
+        System.debug('SSN: ' + ssn);
+        System.debug('DB Password: ' + DB_PASSWORD);
     }
 }
