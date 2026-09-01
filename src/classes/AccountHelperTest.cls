@@ -21,6 +21,7 @@ public with sharing class AccountHelperTest {
     }
 
     @IsTest
+    // Test 
     static void testPrintAccountDetails_HandlesNull() {
         AccountHelper.printAccountDetails(null);
 
