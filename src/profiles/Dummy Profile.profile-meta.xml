@@ -14,7 +14,7 @@
     </classAccesses>
     <custom>true</custom>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Agreement__c.Agreement_Picklist__c</field>
         <readable>true</readable>
     </fieldPermissions>
