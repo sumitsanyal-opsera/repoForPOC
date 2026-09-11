@@ -1,15 +1,39 @@
-public class AccountService {
+public with sharing class AccountService {
+    public static List<Account> buildAccounts(
+        List<String> accountNames
+    ) {
+        List<Account> accounts = new List<Account>();
 
-    public static Account createAccount(String accName) {
-        Account acc = new Account();
-        acc.Name = accName;
-        insert acc;
-        return acc;
-    }
-    // New Apex class added
-    
-    public static List<Account> getAllAccounts() {
-        return [SELECT Id, Name FROM Account LIMIT 10];
+        if (accountNames == null) return accounts;
+
+        for (String accountName : accountNames) {
+            if (!String.isBlank(accountName)) {
+                accounts.add(
+                    new Account(Name = accountName.trim())
+                );
+            }
+        }
+
+        return accounts;
     }
 
+    public static Map<Id, Account> mapAccountsById(
+        List<Account> accounts
+    ) {
+        Map<Id, Account> accountMap =
+            new Map<Id, Account>();
+
+        if (accounts == null) return accountMap;
+
+        for (Account accountRecord : accounts) {
+            if (accountRecord.Id != null) {
+                accountMap.put(
+                    accountRecord.Id,
+                    accountRecord
+                );
+            }
+        }
+
+        return accountMap;
+    }
 }

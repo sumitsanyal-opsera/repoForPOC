@@ -1,30 +1,27 @@
-@isTest
-public class AccountServiceTest {
+@IsTest
+private class AccountServiceTest {
+    @IsTest
+    static void testAccountMethods() {
+        List<Account> accounts =
+            AccountService.buildAccounts(
+                new List<String>{
+                    'Account One',
+                    '',
+                    'Account Two'
+                }
+            );
 
-    @isTest
-    static void testCreateAccount() {
+        System.assertEquals(2, accounts.size());
+        System.assertEquals(
+            'Account One',
+            accounts[0].Name
+        );
 
-        Test.startTest();
-        Account acc = AccountService.createAccount('Test Account');
-        Test.stopTest();
+        insert accounts;
 
-        System.assertNotEquals(null, acc.Id);
-        System.assertEquals('Test Account', acc.Name);
-    }
-    
-    // Added Test comments
-    // test comment
+        Map<Id, Account> accountMap =
+            AccountService.mapAccountsById(accounts);
 
-    @isTest
-    static void testGetAllAccounts() {
-
-        Account acc = new Account(Name = 'Sample Account');
-        insert acc;
-
-        Test.startTest();
-        List<Account> accList = AccountService.getAllAccounts();
-        Test.stopTest();
-
-        System.assert(accList.size() > 0);
+        System.assertEquals(2, accountMap.size());
     }
 }
