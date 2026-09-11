@@ -1,4 +1,4 @@
 trigger POC_ContactTrigger on Contact (before insert, before update) {
-    //Test comment in the trigger
+    //Test comments in the triggers
     POC_ContactTriggerHandler.beforeInsertUpdate(Trigger.new);
 }
