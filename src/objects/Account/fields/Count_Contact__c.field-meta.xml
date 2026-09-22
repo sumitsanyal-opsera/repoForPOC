@@ -4,7 +4,7 @@
     <externalId>false</externalId>
     <label>Count Contacts</label>
     <precision>16</precision>
-    <required>false</required>
+    <required>true</required>
     <scale>2</scale>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
