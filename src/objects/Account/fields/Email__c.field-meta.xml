@@ -4,7 +4,7 @@
     <externalId>false</externalId>
     <label>Emails</label>
     <length>126</length>
-    <required>true</required>
+    <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Text</type>
