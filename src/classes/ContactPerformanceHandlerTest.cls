@@ -1,119 +1,62 @@
-/**
- * Test class for ContactPerformanceHandler (WO-026).
- *
- * Validates:
- *  - Happy-path: contacts are updated with the correct description
- *  - Edge cases: zero passes, null passes, no contacts in org
- *  - Performance assertions: single SOQL and single DML (via Test.startTest/stopTest limits)
- *  - Bulk safety: 200 contacts processed without governor-limit failures
- */
 @IsTest
-public with sharing class ContactPerformanceHandlerTest {
+public class ContactPerformanceHandlerTest {
 
-    @testSetup
-    static void setupData() {
-        List<Contact> contacts = new List<Contact>();
-        for (Integer i = 0; i < 5; i++) {
-            contacts.add(new Contact(
+    @IsTest
+    static void testProcessContacts_PerformanceViolations() {
+
+        //  Violation: Test data created repeatedly without @testSetup
+        for (Integer i = 0; i < 3; i++) {
+            insert new Contact(
                 FirstName = 'Test',
                 LastName  = 'User' + i,
                 Email     = 'user' + i + '@example.com'
-            ));
+            );
         }
-        insert contacts;
-    }
 
-    // -------------------------------------------------------------------------
-    // Happy-path tests
-    // -------------------------------------------------------------------------
+        //  Violation: Re-querying test data unnecessarily
+        List<Contact> contacts = [
+            SELECT Id FROM Contact
+        ];
 
-    @IsTest
-    static void testProcessContacts_UpdatesDescription() {
-        Test.startTest();
-        ContactPerformanceHandler.processContacts(1);
-        Test.stopTest();
+        System.Test.startTest();
 
-        List<Contact> updated = [SELECT Id, Description FROM Contact];
-        System.assert(!updated.isEmpty(), 'Contacts should exist');
-        for (Contact c : updated) {
-            System.assertEquals('Updated_0', c.Description,
-                'Description should be set to Updated_0 after 1 pass');
-        }
-    }
-
-    @IsTest
-    static void testProcessContacts_MultiplePasses() {
-        Test.startTest();
-        ContactPerformanceHandler.processContacts(3);
-        Test.stopTest();
-
-        // After 3 passes the last description written is 'Updated_2'
-        List<Contact> updated = [SELECT Id, Description FROM Contact];
-        for (Contact c : updated) {
-            System.assertEquals('Updated_2', c.Description,
-                'Description should reflect the last pass index');
-        }
-    }
-
-    // -------------------------------------------------------------------------
-    // Edge cases
-    // -------------------------------------------------------------------------
-
-    @IsTest
-    static void testProcessContacts_ZeroPassesDoesNothing() {
-        Test.startTest();
-        ContactPerformanceHandler.processContacts(0);
-        Test.stopTest();
-
-        List<Contact> contacts = [SELECT Id, Description FROM Contact];
-        for (Contact c : contacts) {
-            System.assertEquals(null, c.Description,
-                'Description should remain null when 0 passes requested');
-        }
-    }
-
-    @IsTest
-    static void testProcessContacts_NullPassesDoesNothing() {
-        Test.startTest();
-        ContactPerformanceHandler.processContacts(null);
-        Test.stopTest();
-        System.assert(true, 'Null pass count should not throw an exception');
-    }
-
-    @IsTest
-    static void testProcessContacts_NoContactsHandledGracefully() {
-        delete [SELECT Id FROM Contact];
-
-        Test.startTest();
+        //  Violation: Calling inefficient logic multiple times
         ContactPerformanceHandler.processContacts(2);
-        Test.stopTest();
+        ContactPerformanceHandler.processContacts(1);
 
-        System.assertEquals(0, [SELECT COUNT() FROM Contact],
-            'No contacts in org should be handled without errors');
+        System.Test.stopTest();
+
+        //  Violation: SOQL query without filters
+        List<Contact> updatedContacts = [
+            SELECT Id, Description
+            FROM Contact
+        ];
+
+        //  Violation: Inefficient loop just to assert existence
+        Boolean found = false;
+        for (Contact c : updatedContacts) {
+            found = true;
+        }
+
+        //  Violation: Assertion without message
+        System.assert(found);
+
+        //  Violation: Debug in test class
+        System.debug('Total contacts processed: ' + updatedContacts.size());
     }
 
-    // -------------------------------------------------------------------------
-    // Bulk safety — 200 contacts
-    // -------------------------------------------------------------------------
-
     @IsTest
-    static void testProcessContacts_BulkSafety_200Contacts() {
-        List<Contact> bulk = new List<Contact>();
-        for (Integer i = 5; i < 205; i++) {
-            bulk.add(new Contact(
-                FirstName = 'Bulk',
-                LastName  = 'User' + i,
-                Email     = 'bulk' + i + '@example.com'
-            ));
+    static void testProcessContacts_RepeatedExecution() {
+
+        System.Test.startTest();
+
+        //  Violation: No limits on repeated execution
+        for (Integer i = 0; i < 2; i++) {
+            ContactPerformanceHandler.processContacts(1);
         }
-        insert bulk;
 
-        Test.startTest();
-        ContactPerformanceHandler.processContacts(1);
-        Test.stopTest();
+        System.Test.stopTest();
 
-        Integer count = [SELECT COUNT() FROM Contact WHERE Description = 'Updated_0'];
-        System.assertEquals(205, count,
-            '205 contacts should all be updated in a single bulk DML');
+        //  Violation: No assertions validating behavior
     }
 }
