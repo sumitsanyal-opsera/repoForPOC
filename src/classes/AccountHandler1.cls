@@ -93,7 +93,7 @@ if (Math.mod(counter, 2) == 0) {
             counter++;
         }
 
- // Test comment added by Sumit
+  // Test comment added
         // DML without size check or partial handling
         insert addAccounts;
 
