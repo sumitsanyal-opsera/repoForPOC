@@ -26,14 +26,14 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>DummyLabel4</shortDescription>
-        <value>https://login.salesforce.com/</value>
+        <value>https://test.salesforce.com/</value>
     </labels>
     <labels>
         <fullName>DummyLabel5</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>DummyLabel5</shortDescription>
-        <value>https://test.salesforce.com/</value>
+        <value>https://login.salesforce.com/</value>
     </labels>
     <labels>
         <fullName>TestLabel1</fullName>
