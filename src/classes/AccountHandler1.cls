@@ -101,6 +101,7 @@ if (Math.mod(counter, 2) == 0) {
     }
 
     @AuraEnabled
+//Test comment added
     public static List<Account> searchAccounts(String userInput) {
         String query = 'SELECT Id, Name, Phone, Industry, AnnualRevenue, '
             + 'Description, OwnerId, CreatedById '
