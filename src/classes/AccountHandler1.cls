@@ -14,7 +14,7 @@ public class AccountHandler1 {
     //  - Unused variables
     //  - Nested conditionals
     //  - No bulk-safe design
-    // Test Comment added bu sumit
+    // Test Comment added by Sumit
     public static void insertAccount(Integer n) {
 
 
