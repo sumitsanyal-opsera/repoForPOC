@@ -5,6 +5,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>AccountHandler12</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>AccountHandler1Test</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -14,7 +18,7 @@
     </classAccesses>
     <custom>true</custom>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Agreement__c.Agreement_Picklist__c</field>
         <readable>true</readable>
     </fieldPermissions>

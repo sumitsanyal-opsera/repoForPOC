@@ -2,12 +2,47 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Agreement --></value>
+        <value/>
     </caseValues>
     <caseValues>
         <plural>true</plural>
-        <value><!-- Agreement --></value>
+        <value/>
     </caseValues>
-    <gender><!-- Feminine --></gender>
-    <nameFieldLabel><!-- Agreement Name --></nameFieldLabel>
+    <layouts>
+        <layout>Agreement Layout</layout>
+        <sections>
+            <label>Test Label</label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>EMEA-Agreement- % Layout</layout>
+        <sections>
+            <label>Test Value</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>12345.89</label>
+            <section>EMEA-Layout</section>
+        </sections>
+        <sections>
+            <label>Dummy Value</label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Test Agreement Layout</layout>
+        <sections>
+            <label>Test</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>Test</label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label>12345</label>
+            <section>Test Section</section>
+        </sections>
+    </layouts>
 </CustomObjectTranslation>
