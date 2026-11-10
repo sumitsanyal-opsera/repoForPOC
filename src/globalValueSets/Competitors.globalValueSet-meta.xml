@@ -6,6 +6,16 @@
         <label>Amazon</label>
     </customValue>
     <customValue>
+        <fullName>Dummy</fullName>
+        <default>false</default>
+        <label>Dummy</label>
+    </customValue>
+    <customValue>
+        <fullName>Good Will / Paramount-Pictures</fullName>
+        <default>false</default>
+        <label>Good Will / Paramount-Pictures</label>
+    </customValue>
+    <customValue>
         <fullName>Google</fullName>
         <default>false</default>
         <label>Google</label>
@@ -21,15 +31,82 @@
         <label>Oracle</label>
     </customValue>
     <customValue>
-        <fullName>Salesforce</fullName>
+        <fullName>Salesforce CRM</fullName>
         <default>false</default>
-        <label>Salesforce</label>
+        <label>Salesforce CRM</label>
+    </customValue>
+    <customValue>
+        <fullName>Test </fullName>
+        <default>false</default>
+        <label>Test  </label>
+    </customValue>
+    <customValue>
+        <fullName>Test 2</fullName>
+        <default>false</default>
+        <label>Test 2</label>
+    </customValue>
+    <customValue>
+        <fullName>Test 3</fullName>
+        <default>false</default>
+        <label>Test 3</label>
+    </customValue>
+    <customValue>
+        <fullName>Test 4</fullName>
+        <default>false</default>
+        <label>Test 4</label>
+    </customValue>
+    <customValue>
+        <fullName>Test 5</fullName>
+        <default>false</default>
+        <label>Test 5</label>
+    </customValue>
+    <customValue>
+        <fullName>Test 6</fullName>
+        <default>false</default>
+        <label>Test 6</label>
+    </customValue>
+    <customValue>
+        <fullName>Test 7</fullName>
+        <default>false</default>
+        <label>Test 7</label>
+    </customValue>
+    <customValue>
+        <fullName>Test - Data</fullName>
+        <default>false</default>
+        <label>Test - Data</label>
+    </customValue>
+    <customValue>
+        <fullName>Test - Dummy/ Test Value</fullName>
+        <default>false</default>
+        <label>Test - Dummy/ Test Value</label>
+    </customValue>
+    <customValue>
+        <fullName>Test-Value</fullName>
+        <default>false</default>
+        <label>Test-Value</label>
+    </customValue>
+    <customValue>
+        <fullName>Viacom-Pictures</fullName>
+        <default>false</default>
+        <label>Viacom-Pictures</label>
+    </customValue>
+    <customValue>
+        <fullName>Yahoo_!</fullName>
+        <default>false</default>
+        <label>Yahoo!</label>
+    </customValue>
+    <customValue>
+        <fullName>Test</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Test</label>
     </customValue>
     <customValue>
         <fullName>Yahoo !</fullName>
         <default>false</default>
+        <isActive>false</isActive>
         <label>Yahoo !</label>
     </customValue>
     <masterLabel>Competitors</masterLabel>
-    <sorted>false</sorted>
+    <sorted>true</sorted>
 </GlobalValueSet>
